@@ -7,6 +7,6 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://fractalcodericardo.github.io/programmingheadache-blog",
-  base: "/programmingheadache-blog/",
+  base: "/programmingheadache-blog",
   integrations: [mdx(), sitemap()],
 });
