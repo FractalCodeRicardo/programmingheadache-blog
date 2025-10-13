@@ -1,2 +1,1 @@
-# programmingheadache-blog
-Programming headache Blog
+Programming Headache

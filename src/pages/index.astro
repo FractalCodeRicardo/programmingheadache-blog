@@ -1,0 +1,21 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+                  <p>Be right back! Our code went on a coffee break</p>
+                <main style="flex: 1; display: flex; justify-content: center; align-items: center;">
+      <img src="/wellbeback.png" alt="We'll be back soon" style="max-width: 100%; height: auto;" />
+    </main>
+		<Footer />
+	</body>
+</html>
