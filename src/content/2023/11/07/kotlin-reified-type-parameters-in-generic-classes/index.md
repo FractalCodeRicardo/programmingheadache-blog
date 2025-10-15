@@ -9,7 +9,7 @@ Reflection is great, it allows programmers examine and modify objects and classe
 
 Consider this
 
-```kotlinkotlin
+```kotlin
 fun <T: Any> printNameClass(clazz: KClass<T>) {
     println(clazz.simpleName)
 }
