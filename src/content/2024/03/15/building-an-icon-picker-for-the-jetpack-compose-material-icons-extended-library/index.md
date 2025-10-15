@@ -19,7 +19,7 @@ We're looking for a picker similar to the gif below
 
 First you need to add the extended library in the build.grade.kt file (replace the version if needed)
 
-```
+```kotlin
 implementation("androidx.compose.material:material-icons-extended:1.6.3")
 ```
 
@@ -35,7 +35,7 @@ The picker is composed of a dialog with three main sections:
 
 So, here's our fundamental structure
 
-```
+```kotlin
     Dialog(
         onDismissRequest = {},
 
@@ -58,7 +58,7 @@ So, here's our fundamental structure
 
 Additionally, I added a card as a container
 
-```
+```kotlin
 @Composable
 private fun CardContainer(
     content: @Composable () -> Unit
@@ -83,7 +83,7 @@ private fun CardContainer(
 
 We will use a Text for the title and an OutlinedTextField for the search input
 
-```
+```kotlin
 @Composable
 private fun SearchTextField(
 
@@ -106,7 +106,7 @@ private fun SearchTextField(
 
 Then, I added a parameter for handling the search changed event. I added icons and modifiers too.
 
-```
+```kotlin
 @Composable
 private fun SearchTextField(
     onSearchChanged: (String) -> Unit
@@ -156,7 +156,7 @@ This is how it looks
 
 To handle the icon information we will use this class:
 
-```
+```kotlin
 data class IconItem(
     var id: String = "",
     var name: String = "",
@@ -177,7 +177,7 @@ As we can see in the image below. Each Icon has three elements:
 
 The structure of the composable is the following
 
-```
+```kotlin
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun IconItem(
@@ -219,7 +219,7 @@ private fun IconItem(
 
 Then I added colors, modifiers and I implement the event.
 
-```
+```kotlin
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun IconItem(
@@ -290,7 +290,7 @@ private fun IconItem(
 
 The list is composed of N rows each row with three items. Therefore, we will use a multidimentional list as parameter, we will add a parameter for the onClick event, too.
 
-```
+```kotlin
 @Composable
 private fun IconsList(
     icons: List<List<IconItem>>,
@@ -317,7 +317,7 @@ private fun IconsList(
 
 Every row will be structured with this component
 
-```
+```kotlin
 @Composable
 private fun IconListRow(
     icons: List<IconItem>,
@@ -343,7 +343,7 @@ This is how it appears
 
 We need a button to accept or decline the icon selection. It consist in Row with the two buttons:
 
-```
+```kotlin
 @Composable
 private fun Buttons(
     onAccept: () -> Unit,
@@ -378,7 +378,7 @@ To get the whole list of icons we are going to use a special asset file (you can
   
 We need to convert the icon's name into an ImageVector. This can be achieved using the following snippet.
 
-```
+```kotlin
 object ImageUtil {
     fun createImageVector(name: String): ImageVector? {
         try {
@@ -397,7 +397,7 @@ object ImageUtil {
 
 Our view model will have this structure
 
-```
+```kotlin
 interface IconsViewModel {
 
     val state: StateFlow<IconsState>
@@ -416,7 +416,7 @@ data class IconsState(
 
 To update the icons, we'll first fetch the complete list of icon names from the "icon-names.txt" file.
 
-```
+```kotlin
 private fun getNamesIcons(): List<String> {
     val inputStream = context.assets.open("icons-names.txt")
     val reader = BufferedReader(InputStreamReader(inputStream))
@@ -428,7 +428,7 @@ private fun getNamesIcons(): List<String> {
 
 Then, we'll filter them based on the search term. The result will be chunked in lists of three elements.
 
-```
+```kotlin
 override fun updateSearch(search: String) {
     val icons = getNamesIcons()
         .filter { it.contains(search, ignoreCase = true) }
@@ -454,7 +454,7 @@ private fun updateSelection(icons: List<List<IconItem>>) {
 
 When an icon is clicked we will update the selectedIcons variable
 
-```
+```kotlin
 override fun onClickIcon(icon: IconItem) {
    val selected = state.value.selectedIcons
 
@@ -474,7 +474,7 @@ This is the final result
 
 ## Whole code of view model
 
-```
+```kotlin
 data class IconItem(
     var id: String = "",
     var name: String = "",
@@ -571,7 +571,7 @@ class IconsViewModelImp(
 
 ## Whole code of the view
 
-```
+```kotlin
 @Composable
 fun ExtendedIconsPicker(
     onSelected: (List<String>) -> Unit,

@@ -32,7 +32,7 @@ Jetpack compose text fields are highly customizable. Here are 10 things that you
 
 You can choose between TextField, BasicTextField, and OutlinedTextField. Personally I prefer OutlinerTextField, but if you want a minimalist design TextField is better. This is an example of them:
 
-```
+```kotlin
 Column(modifier = Modifier.padding(50.dp)) {
     TextField(value = "TextField", onValueChange = {} )
     Spacer(Modifier.height(50.dp))
@@ -48,7 +48,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 
 Sounds obvious, but the use of labels it is indispensable, dont forget it. In the case of BasicTextField, it does not have label property, so you have to use a Text Composable for it.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
   Column(modifier = Modifier.padding(50.dp)) {
@@ -82,7 +82,7 @@ var text by remember { mutableStateOf("") }
 
 There is special dependency for the extended icon pack. Just add this line to your dependencies (replace the number version)
 
-```
+```kotlin
 dependencies {
   implementation("androidx.compose.material:material-icons-extended:1.5.4")
   
@@ -101,7 +101,7 @@ You can have a preview of the icons in the page:
 
 Both OutlinedTextField and TextField have trailingIcon property. BasicTextField does not have so you have to do it manually.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {
@@ -143,7 +143,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 
 ## 5\. Use leading icon
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
   Column(modifier = Modifier.padding(50.dp)) {
@@ -199,7 +199,7 @@ var text by remember { mutableStateOf("") }
 
 You can change font color, container color, error colors, etc. Let's see an example with text colors.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {
@@ -266,7 +266,7 @@ With visual transformations you can customize the way the text looks. This is mo
 
 You have to create a class like this:
 
-```
+```kotlin
 private class EmojiTransformation : VisualTransformation {
     override fun filter(text: AnnotatedString): TransformedText {
         val originalText = text.text.trim()
@@ -290,7 +290,7 @@ private class EmojiTransformation : VisualTransformation {
 }
 ```
 
-```
+```kotlin
  var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {
@@ -357,7 +357,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 
 You can customize the shape of the text field, it can be a rounded square, a rectangle or a circle. Lets see an example with Circle Shape.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {
@@ -434,7 +434,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 
 Supporting text is a description below the text field. It can be helpful for the user.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {
@@ -514,7 +514,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 
 Placeholders are descriptive text that the user can see before he start typing.
 
-```
+```kotlin
 var text by remember { mutableStateOf("") }
 
 Column(modifier = Modifier.padding(50.dp)) {

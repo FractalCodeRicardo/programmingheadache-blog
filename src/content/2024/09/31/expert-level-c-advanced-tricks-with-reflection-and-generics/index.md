@@ -18,7 +18,7 @@ An advanced software developer uses generics and reflection to save themselves t
 
 The reason for doing this is simple. If you hard-code property names and later change them, you might break things without noticing. With this trick, you can safely change property names.
 
-```
+```csharp
 // Instead of
 // var nameProp = "Name"; 
 // you can use 
@@ -39,7 +39,7 @@ Mapping common properties between objects is a frequent task in business softwar
 
 Here is a simplified example of a mapper class  
 
-```
+```csharp
 
 public class Mapper<TSource, TTarget>
     where TSource : class
@@ -73,7 +73,7 @@ public class Mapper<TSource, TTarget>
 
 Now, instead of mapping manually all the common properties like this
 
-```
+```csharp
 var foo = new Foo();
 var bar = new Bar();
 
@@ -85,7 +85,7 @@ bar.Name3 = foo.Name3;
 
 You just call the mapper as shown above:
 
-```
+```csharp
 var mapper = new Mapper<Foo, Bar>();
 mapper.Map(foo, bar);
 ```
@@ -96,7 +96,7 @@ Believe it or not, even if a method is marked as private, it can still be called
 
 Consider this class with a private a method
 
-```
+```csharp
 public class PrivateMethodClass 
 {
     private void GetPrivateThings()
@@ -108,7 +108,7 @@ public class PrivateMethodClass
 
 You can call the private method in this way
 
-```
+```csharp
 var instance = new PrivateMethodClass();
 var type = typeof(PrivateMethodClass);
 
@@ -123,7 +123,7 @@ Yes, we love LINQ, and yes, you can easily extend it. For example, suppose you n
 
 You can do the following
 
-```
+```csharp
 public static class CollectionExtensions
 {
     public static IEnumerable<T> Between<T>(
@@ -142,7 +142,7 @@ public static class CollectionExtensions
 
 And use it like this
 
-```
+```csharp
 var dates = new List<Foo>() {
     new Foo() { Date = new DateTime(2024, 1, 1)},
     new Foo() { Date = new DateTime(2024, 1, 2)}
@@ -158,7 +158,7 @@ var filtered = dates.Between(x => x.Date, from, to);
 
 Suppose we want to filter a list with certain conditions
 
-```
+```csharp
 var fooList = new List<Foo>() {
  // elements
 };
@@ -176,7 +176,7 @@ The problem with this, is that the filter condition Expression has to be written
 
 A common approach to build the expression is a class like the following
 
-```
+```csharp
 public class ExpressionBuilder<T>
 {
 
@@ -228,7 +228,7 @@ public class ExpressionBuilder<T>
 
 And you can use it like this
 
-```
+```csharp
 var builder = new ExpressionBuilder<Foo>();
    
 // this can be create it at runtime     

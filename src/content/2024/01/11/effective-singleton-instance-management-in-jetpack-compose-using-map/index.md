@@ -22,7 +22,7 @@ The pattern is often used in the creation of view models or repositories. Let's 
 
 Suppose we have three entities in our project
 
-```
+```kotlin
 data class User(val id: String)
 data class Customer(val id: String)
 data class Provider(val id: String)
@@ -30,7 +30,7 @@ data class Provider(val id: String)
 
 And we have a view model for each one:
 
-```
+```kotlin
 // Users
 interface UsersViewModel {
     fun showUsers()
@@ -61,7 +61,7 @@ class ProvidersViewModelImp: ProvidersViewModel  {
 
 Now we want an instance of each view model. An approach could be this one:
 
-```
+```kotlin
 object ViewModelFactory {
     val users: UsersViewModel = UsersViewModelImp()
     val customers: CustomersViewModel = CustomersViewModelImp()
@@ -77,7 +77,7 @@ The problem with this approach is that **you initialize all the instances and th
 
 5. If the instance is not in the map we have to create and add it.
 
-```
+```kotlin
 fun <T : Any> getInstace(key: String, create: () -> T): T {
     // If the instance is not in the map we have to create and add it.
     if (!mapInstances.containsKey(key)) {
@@ -91,7 +91,7 @@ fun <T : Any> getInstace(key: String, create: () -> T): T {
 
 Now we can add each singleton
 
-```
+```kotlin
 fun users(): UsersViewModel {
     return getInstance("users") { UsersViewModelImp() }
 }
@@ -107,7 +107,7 @@ fun providers(): ProvidersViewModel {
 
 This is the whole code:
 
-```
+```kotlin
 class MapViewModelFactory {
     companion object {
         private val mapInstances = mutableMapOf<String, Any>()
@@ -137,7 +137,7 @@ class MapViewModelFactory {
 
 And you can use it like this:
 
-```
+```kotlin
 val usersViewModel = MapViewModelFactory.users()
 usersViewModel.showUsers()
 

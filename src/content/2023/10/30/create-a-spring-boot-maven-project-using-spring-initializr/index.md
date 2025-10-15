@@ -45,7 +45,7 @@ It should look like the image below
 
 Add a SayHi class with the @RestController annotation. This indicates that this class contains an end point. Then add a method the @GetMapping annotation. This indicates that the method will handle the request of the specified path
 
-```
+```java
 
 @RestController
 public class SayHi {
@@ -62,13 +62,13 @@ public class SayHi {
 
 First install maven dependencies using
 
-```
+```java
 ./mvnw install
 ```
 
 Then run the application using
 
-```
+```java
 ./mvnw spring-boot:run
 ```
 

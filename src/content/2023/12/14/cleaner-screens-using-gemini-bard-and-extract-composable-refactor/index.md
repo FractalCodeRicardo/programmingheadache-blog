@@ -21,7 +21,7 @@ In my opinion, one of the best refactors is _extract function._ Martin Fowler de
 
 _"You have a code fragment that can be grouped together. Turn the fragment into a method whose name explains the purpose of the method."_
 
-```
+```kotlin
  void printOwing(double amount) {
    printBanner();
    //print details
@@ -32,7 +32,7 @@ _"You have a code fragment that can be grouped together. Turn the fragment into 
 
 With the method extracted looks like this
 
-```
+```kotlin
 void printOwing(double amount) {
    printBanner();
    printDetails(amount);
@@ -48,7 +48,7 @@ The same principle can be applied to composables in Jetpack Compose. And it can 
 
 Consider this example. It is a form for personal information.
 
-```
+```kotlin
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -137,7 +137,7 @@ Here is the code that Bard gives me. I had to fix some errors:
 
   
 
-```
+```kotlin
 
 @Composable
 fun NameField(
@@ -232,7 +232,7 @@ Now I asked for the original code using this new functions
 
 ![](images/image-12.png)
 
-```
+```kotlin
 @Composable
 fun PersonalInfoScreen(
     name: String = "",
@@ -294,7 +294,7 @@ It looks much cleaner!
 
 I ask for the preview and Bard give me this code
 
-```
+```kotlin
 @Preview(showBackground = true)
 @Composable
 fun PersonalInfoScreenPreview() {

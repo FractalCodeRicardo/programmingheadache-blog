@@ -15,7 +15,7 @@ Within the .NET environment, there is a preprocessor directive that helps you co
 
 The idea is very simple. For example
 
-```
+```csharp
 #if DEBUG
   // I'm in my local enviroment
 #else
@@ -25,7 +25,7 @@ The idea is very simple. For example
 
 Suppose you have an application that uses Entity Framework. A simple approach to use the correct connection string can be as follows
 
-```
+```csharp
 public class AppDbContext : DbContext
 {
 
@@ -50,7 +50,7 @@ public class AppDbContext : DbContext
 
 Suppose you are familiar with well-known conventions for your databases, for example: Sales for production and Sales\_Dev for local development. You can add extra validations like this:
 
-```
+```csharp
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
@@ -77,7 +77,7 @@ Another approach to controlling the production environment is through the use of
 
 Inside the application, you can access the value of the variable as demonstrated below:
 
-```
+```csharp
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -98,7 +98,7 @@ if (app.Environment.IsDevelopment())
 
 So, you can validate if you are in the correct environment like this
 
-```
+```csharp
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();

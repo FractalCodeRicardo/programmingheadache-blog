@@ -31,7 +31,7 @@ In you daily programming you will need filter, order, grouping, etc your collect
 
 We are going to use this class and data for the examples:
 
-```
+```kotlin
 data class Animal(
     val name: String = "",
     val type: String = "",
@@ -59,7 +59,7 @@ val animals = listOf(
 
 It just iterate over the collection
 
-```
+```kotlin
 // 1. Foreach
 // Print the animal names
 
@@ -73,7 +73,7 @@ animals.forEach { print("${it.name} ") }
 
 Filter over the collection using a condition
 
-```
+```kotlin
 // 2. Filter
 // Gets birds
 val birds = animals
@@ -90,7 +90,7 @@ birds.forEach { print("${it.name} ") }
 
 Return the first element or null given a condition
 
-```
+```kotlin
 // 3. Find or FirstOrNull
 // Get first hawk o null
 var hawk = animals.firstOrNull { it.name == "Hawk" }
@@ -109,7 +109,7 @@ hawk?.let { println(hawk) }
 
 Returns the elements _s_orted in ascending order using the selector specified
 
-```
+```kotlin
 // 4. Order
 // Get the smallest animals first
 val smallestAnimalsFirst = animals.sortedBy { it.height }
@@ -125,7 +125,7 @@ smallestAnimalsFirst.forEach { print("${it.name}(${it.height}) ") }
 
 Returns a new collection changing each element using the function specified
 
-```
+```kotlin
 // 5. Map
 // Get only names and types
 val justNamesAndTypes = animals.map {
@@ -146,7 +146,7 @@ justNamesAndTypes.forEach { print("${it.name}/${it.type} ") }
 
 Returns the smallest element using the function specified
 
-```
+```kotlin
 // 6. Min
 // Get the smallest animal
 val smallestAnimal = animals.minBy { it.height }
@@ -162,7 +162,7 @@ println(smallestAnimal)
 
 Returns the largest element using the function specified
 
-```
+```kotlin
 // 7. Max
 // Get the smallest animal
 val biggestAnimal = animals.maxBy { it.height }
@@ -178,7 +178,7 @@ println(biggestAnimal)
 
 Returns a Map that groups the elements using the function specified. The _**key**_ of the map is the grouping value and the **_value_** is a list of grouped elements.
 
-```
+```kotlin
     // 8. Group
     // Group by type
     val groupsByType = animals.groupBy { it.type }
@@ -205,7 +205,7 @@ Returns a Map that groups the elements using the function specified. The _**key*
 
 Returns the sum of the elements according the function given
 
-```
+```kotlin
 // 9. Sum
 // Sum the heights of all animals
 val sumHeight = animals.sumOf { it.height }
@@ -221,7 +221,7 @@ println(sumHeight)
 
 Returns a list of elements removing the duplicated elements according the function given
 
-```
+```kotlin
 // 10. Distinct
 // Remove hawks duplicated
 val  removedDuplicated = animals
@@ -241,7 +241,7 @@ You can mix the functions to have complex queries. Lets see some examples.
 
 **11-a Get the names of the mammals with weight over 100**
 
-```
+```kotlin
  // Get the names of the mammals with weight over 100
 val namesMammalsOver100 = animals
     .filter { it.type == "Mammal" && it.weight > 100 }
@@ -256,7 +256,7 @@ println(namesMammalsOver100)
 
 **11-b. Get the animals that contains "in" in the name sorted by height**
 
-```
+```kotlin
 // Get the animals that contains "in" in the name sorted by height
 val animalsWithIn = animals
     .filter { it.name.lowercase().contains("in") }
@@ -271,7 +271,7 @@ println(animalsWithIn)
 
 **11-c. Get the name of the smallest mammal or null**
 
-```
+```kotlin
  // Get name of smallest mammal or null
 val smallestMammal = animals
     .filter { it.type == "Mammal" }
@@ -288,7 +288,7 @@ println(smallestMammal)
 
 **11-d. Get the smallest animal of each type**
 
-```
+```kotlin
 // Get the smallest animal of each type
 val smallestOfGroups = animals
     .groupBy { it.type }
@@ -311,7 +311,7 @@ smallestOfGroups.forEach { println("${it.Group} ${it.Smallest} ") }
 
 **11-e. Get the sum height of each type**
 
-```
+```kotlin
 // Get the sum height of each group
 val sumEachGroup = animals
     .groupBy { it.type }

@@ -14,7 +14,7 @@ The basics for controlling how elements are showing in Compose consists in the u
 
 Lets see the common cases. We will use this composable for the examples:
 
-```
+```kotlin
 @Composable
 fun Element(text: String) {
    Column(modifier = Modifier.background(MaterialTheme.colorScheme.primary)
@@ -36,7 +36,7 @@ fun Element(text: String) {
 
 ![](images/image-15.png)
 
-```
+```kotlin
 Row() {
     Element(text = "1")
     Element(text = "2")
@@ -50,7 +50,7 @@ Row() {
 
 ![](images/image-16.png)
 
-```
+```kotlin
 Column() {
     Element(text = "1")
     Element(text = "2")
@@ -64,7 +64,7 @@ Column() {
 
 ![](images/image-17.png)
 
-```
+```kotlin
 Column() {
     Row() {
         Element(text = "1")
@@ -100,7 +100,7 @@ Horizontally
 
 Full centered
 
-```
+```kotlin
 Column(
     modifier = Modifier.fillMaxSize(),
     verticalArrangement = Arrangement.Center,
@@ -127,7 +127,7 @@ Horizontally
 
 Full centered
 
-```
+```kotlin
 Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
@@ -154,7 +154,7 @@ Center
 
 End
 
-```
+```kotlin
 Column(
     modifier = Modifier.fillMaxSize(),
     // Uncomment the one you need
@@ -181,7 +181,7 @@ Space around (space after and before are the same)
 
 Space evenly (all spaces are the same)
 
-```
+```kotlin
 Row(
     modifier = Modifier.fillMaxSize(),
     // Uncomment the one that you needs
@@ -198,7 +198,7 @@ Row(
 
 ![](images/image-33.png)
 
-```
+```kotlin
 Column() {
     Column {
         Element("C1")
@@ -228,7 +228,7 @@ Column() {
 
 ![](images/image-35.png)
 
-```
+```kotlin
 Row() {
     Row {
         Element("R1")
@@ -275,7 +275,7 @@ Lets see some examples
 
 ![](images/image-36.png)
 
-```
+```kotlin
 Column() {
 
     Row(modifier = Modifier.fillMaxWidth()) {
@@ -296,7 +296,7 @@ Column() {
 
 ![](images/image-37.png)
 
-```
+```kotlin
 Row() {
 
     Column(modifier = Modifier.fillMaxHeight()) {

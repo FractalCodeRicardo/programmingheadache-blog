@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=aLr-4GZGIDQ
 
 Create two files: squares.html and squares.js. In the html file add the reference to p5.js library and squares.js
 
-```
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +41,7 @@ Create two files: squares.html and squares.js. In the html file add the referenc
 
 In the squares.js file add the get started code from the official P5 webpage [https://p5js.org/get-started/](https://p5js.org/get-started/)
 
-```
+```javascript
 
 const SIZE = 500;
 
@@ -62,7 +62,7 @@ Open the html file in a web browser, you will get this:
 
 To draw each square we need to set the X and Y coordinates in the canvas. We will use a special class for this:
 
-```
+```javascript
 class Vector {
     constructor(x, y) {
         this.x = x;
@@ -73,7 +73,7 @@ class Vector {
 
 We are going to use two special classes for the simulation. The class Simulation will have the Agents (squares) moving in the screen, and the Agent class will have the position and direction of each agent.
 
-```
+```javascript
 
 class Simulation {
     constructor() {
@@ -100,7 +100,7 @@ class Agent {
 
 To draw the agents we will use the square and fill functions of p5.js. You can check the reference page [https://p5js.org/reference/](https://p5js.org/reference/)
 
-```
+```javascript
 const simulation = new Simulation();
 
 function drawSimulation() {
@@ -116,7 +116,7 @@ function drawSquare(position, color) {
 
 And we call drawSimulation in the draw method
 
-```
+```javascript
 function draw() {
   background(220);
   drawSimulation()
@@ -131,7 +131,7 @@ Looks like this until now:
 
 To move the agents we introduce a new variable to control speed
 
-```
+```javascript
 const SIZE = 500;
 const SQUARE_SIZE = 50;
 const SPEED = 10;
@@ -151,7 +151,7 @@ To multiply a vector with a scalar we apply this formula:
 
 So we create a two functions in the Vector class with the formulas:
 
-```
+```javascript
 class Vector {
     constructor(x, y) {
         this.x = x;
@@ -176,7 +176,7 @@ class Vector {
 
 We add the move function in the Agent class
 
-```
+```javascript
 class Agent {
     constructor(position) {
         this.position = position
@@ -197,7 +197,7 @@ class Agent {
 
 And we create a iterate method in the simulation class
 
-```
+```javascript
 class Simulation {
     constructor() {
         this.square1 = new Agent(
@@ -217,7 +217,7 @@ class Simulation {
 
 We iterate every time the scene is drawn
 
-```
+```javascript
 function draw() {
     background(220);
     simulation.iterate();
@@ -233,7 +233,7 @@ We are going to fill the entire screen with squares; half of the screen will be 
 
 With this function we iterate over the screen
 
-```
+```javascript
 iterateOverScreen(callback) {
     for (let i = 0; i < SIZE; i += SQUARE_SIZE) {
         for (let j = 0; j < SIZE; j += SQUARE_SIZE) {
@@ -245,7 +245,7 @@ iterateOverScreen(callback) {
 
 And we create the walls with this two functions
 
-```
+```javascript
 createWall1() {
         let wall = [];
         this.iterateOverScreen((i, j) => {
@@ -270,7 +270,7 @@ createWall2() {
 
 And we draw each wall with this function
 
-```
+```javascript
 function drawWall(wall, color) {
     wall.forEach(i => {
         fill(color)
@@ -287,7 +287,7 @@ It looks like this
 
 To detect the collisions we need to know if the Agent is going right or left.
 
-```
+```javascript
 class Agent {
   // Omitted
   
@@ -303,7 +303,7 @@ class Agent {
 
 And we detect the crash with the wall like this
 
-```
+```javascript
 class Agent {
 
     crashRight(topLeft) {
@@ -353,7 +353,7 @@ class Agent {
 
 If the Agent is moving right and we detect a crash from left we move square of the wall
 
-```
+```javascript
 class Simulation {
  // Omitted
  
@@ -385,7 +385,7 @@ class Simulation {
 
 This is the whole code
 
-```
+```javascript
 const SIZE = 500;
 const SQUARE_SIZE = 50;
 const SPEED = 10;

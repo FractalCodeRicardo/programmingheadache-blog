@@ -23,7 +23,7 @@ It would be great to let the users choose the icons that they want, so lets buil
 
 First, lets put in a list the icons that we want to show
 
-```
+```kotlin
 val icons = listOf(
     Icons.Filled.Add,
     Icons.Filled.MoreVert,
@@ -35,7 +35,7 @@ val icons = listOf(
 
 Now we want a simple list that shows icons. Like this:
 
-```
+```kotlin
 @Composable
 fun IconList() {
     LazyColumn() {
@@ -57,7 +57,7 @@ fun IconList() {
 
 Now we want a TextField that shows the icons when typing. Lets add the TextField and the code that shows the list on typing
 
-```
+```kotlin
 var expanded by remember { mutableStateOf(true) }
     
 Column {
@@ -77,7 +77,7 @@ Column {
 
 And we adapt our list to receive some parameters
 
-```
+```kotlin
 fun IconList(
     expanded: Boolean,
     onSelected: (String) -> Unit,
@@ -97,11 +97,11 @@ fun IconList(
 
 Now lets filter the results
 
-```
+```kotlin
 var filter by remember { mutableStateOf(selectedIcon) }
 ```
 
-```
+```kotlin
 OutlinedTextField(
     value = filter ,
     onValueChange = {
@@ -113,7 +113,7 @@ OutlinedTextField(
 
 In the list we filter the items
 
-```
+```kotlin
 LazyColumn() {
         this.items(
             items = icons.filter {
@@ -140,7 +140,7 @@ I added some code to get a better look:
 
 The final code is this
 
-```
+```kotlin
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable

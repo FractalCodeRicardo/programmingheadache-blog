@@ -32,7 +32,7 @@ Although these functions are straightforward to implement, many developers overl
 
 A standard repository pattern in Entity Framework typically includes the following methods:
 
-```
+```csharp
 public interface IRepository<T> where T : class
 {
   Task<IEnumerable<T>> GetAllAsync();
@@ -58,7 +58,7 @@ public interface IRepository<T> where T : class
 
 First we want to retrieve the ids dynamically. We are going to get the id values using reflection. First we get id properties
 
-```
+```csharp
   private IEnumerable<PropertyInfo> GetIdsProperties()
   {
     var type = typeof(T);
@@ -74,7 +74,7 @@ First we want to retrieve the ids dynamically. We are going to get the id values
 
 Then we get the id values using the properties
 
-```
+```csharp
 private object[] GetIds(T entity)
   {
     var type = typeof(T);
@@ -100,7 +100,7 @@ private object[] GetIds(T entity)
 
 I've seen many projects with this pattern used widely
 
-```
+```csharp
 using (var con = new AnimalsContext())
 {
   var repo = new Repository<Animal>(con);
@@ -118,7 +118,7 @@ Even though this code can be written in a generic way, in practice you can see i
 
 Lets create a better delete that check if the data is present in the data base
 
-```
+```csharp
   public async Task BetterDelete(params object[] ids)
   {
     var entity = await _dbSet.FindAsync(ids);
@@ -132,7 +132,7 @@ Lets create a better delete that check if the data is present in the data base
 
 Then the code is simplified like this
 
-```
+```csharp
 using (var con = new AnimalsContext())
 {
   var repo = new Repository<Animal>(con);
@@ -147,7 +147,7 @@ Most of the time, we don’t care whether the data already exists in the databas
 
 In many projects, you’ll see this common pattern:
 
-```
+```csharp
 using (var con = new AnimalsContext())
 {
   var repo = new Repository<Animal>(con);
@@ -174,7 +174,7 @@ using (var con = new AnimalsContext())
 
 Let’s simplify this by creating a generic save function:
 
-```
+```csharp
  public async Task SaveAsync(T entity)
   {
     var ids = GetIds(entity);
@@ -196,7 +196,7 @@ Let’s simplify this by creating a generic save function:
 
 And now the code becomes much simpler:
 
-```
+```csharp
   using (var con = new AnimalsContext())
   {
     var repo = new Repository<Animal>(con);

@@ -12,7 +12,7 @@ _FATAL EXCEPTION: main Process: com.thisisthetime.controlinversiones, PID: 10446
 
 This is caused when you want to create your database like this
 
-```
+```kotlin
 val database: AppDatabase =  
         Room.databaseBuilder(
             context,

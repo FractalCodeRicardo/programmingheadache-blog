@@ -11,13 +11,13 @@ Do you want to test your skills as a C# programmer? Are you a beginner eager to 
 
 1. Just clone this repository
 
-```
+```csharp
 git clone https://github.com/FractalCodeRicardo/katas-linq.git
 ```
 
 2\. You are provided with a class and a data list.
 
-```
+```csharp
 public record Animal(
     string Name = "",
     string Type = "",
@@ -53,7 +53,7 @@ public static IEnumerable<Animal> Get()
 
 4\. Check you answers running
 
-```
+```csharp
 dotnet build
 dotnet test
 ```

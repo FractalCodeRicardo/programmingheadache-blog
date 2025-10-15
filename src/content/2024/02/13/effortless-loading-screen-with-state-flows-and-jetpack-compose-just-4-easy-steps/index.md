@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=UIcMlH8EQYc
 
 1\. Create de state
 
-```
+```kotlin
 data class SimpleLoadingState(
     val loading: Boolean = false
 )
@@ -32,7 +32,7 @@ data class SimpleLoadingState(
 
 2\. Create a view model with the long process
 
-```
+```kotlin
 class SimpleLoadingViewModel : ViewModel() {
     private val _state = MutableStateFlow(SimpleLoadingState())
     val state: StateFlow<SimpleLoadingState> = _state
@@ -49,7 +49,7 @@ class SimpleLoadingViewModel : ViewModel() {
 
 3\. Create the screen
 
-```
+```kotlin
 @Composable
 fun SimpleLoadingScreen(viewModel: SimpleLoadingViewModel) {
     val state by viewModel.state.collectAsState()
@@ -69,7 +69,7 @@ fun SimpleLoadingScreen(viewModel: SimpleLoadingViewModel) {
 
 4\. Add a preview
 
-```
+```kotlin
 // 4. Create a preview
 @Preview
 @Composable
@@ -90,7 +90,7 @@ Lets improve how it looks
 
 This is the whole code
 
-```
+```kotlin
 
 // 1. Create the state
 

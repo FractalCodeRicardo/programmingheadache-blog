@@ -28,7 +28,7 @@ Let's see come practical examples that surely you will find in your daily progra
 
 Consider this method that get costumers with discounts
 
-```
+```javascript
 function customersWithPremiumDiscount(customers) {
     let customersWithDiscounts = [];
 
@@ -51,7 +51,7 @@ function customersWithPremiumDiscount(customers) {
 
 We replace the condition for a method
 
-```
+```javascript
 function HasDiscount(customer) {
     let isGoldOrPremium = customer.membership === 'Gold' 
         || customer.membership === 'Platinum';
@@ -65,7 +65,7 @@ function HasDiscount(customer) {
 
 And then we call that method
 
-```
+```javascript
 function customersWithPremiumDiscount(customers) {
     return customers.filter(c => HasDiscount(c));
 } //Look how clean the original function is!
@@ -75,7 +75,7 @@ function customersWithPremiumDiscount(customers) {
 
 Consider this function to get the grand total of some sales
 
-```
+```javascript
 function calculateTotal(sales) {
 
     let grandTotal = 0;
@@ -93,7 +93,7 @@ function calculateTotal(sales) {
 
 We can extract the total calculation of each sale into a method
 
-```
+```javascript
 function calculateTotal(sale) {
     var subtotal = sale.price * sale.quantity;
     var taxes = subtotal * sale.taxRate;
@@ -105,7 +105,7 @@ function calculateTotal(sale) {
 
 And we change the original function. Looks awesome!
 
-```
+```javascript
 function calculateTotalSales(sales) {
     return sales.reduce((a, i) => a + calculateTotal(i))
 }
@@ -115,7 +115,7 @@ function calculateTotalSales(sales) {
 
 Consider this function to get some players.
 
-```
+```javascript
 function getPlayers() {
     let player1 = {
         name: "Archer",
@@ -147,7 +147,7 @@ function getPlayers() {
 
 We create a new method to eliminate the duplicated code
 
-```
+```javascript
 function createPlayer(name, playerClass) {
     return {
         name: name,
@@ -161,7 +161,7 @@ function createPlayer(name, playerClass) {
 
 And we use it in the original method. Great!
 
-```
+```javascript
 function getPlayers() {
     return [
         createPlayer("Archer", "Ranger"),
@@ -175,7 +175,7 @@ function getPlayers() {
 
 Consider these similar loops
 
-```
+```javascript
 function saveHighValueOrders(orders) {
     for (let order of orders) {
         if (order.amount > 500) {
@@ -203,7 +203,7 @@ function saveExpeditedOrders(orders) {
 
 As you see the only thing that changes is a condition. So we create a new method and we pass the condition as parameter.
 
-```
+```javascript
 function saveOrders(orders, condition) {
     for (let order of orders) {
         if (condition(order)) {
@@ -215,7 +215,7 @@ function saveOrders(orders, condition) {
 
 The original functions are too much cleaner!
 
-```
+```javascript
 function saveHighValueOrders(orders) {
     saveOrders(orders, order => order.amount > 500);
 }

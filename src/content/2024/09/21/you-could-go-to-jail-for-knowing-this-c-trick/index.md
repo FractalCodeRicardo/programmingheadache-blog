@@ -24,7 +24,7 @@ Consider this example.
 
 We have a library with a public class like this
 
-```
+```csharp
 namespace Library;
 
 public class PublicClass
@@ -43,7 +43,7 @@ We want to protect our private method, so we declare it as private.
 
 Even if the method is private we can call it externally with a code like this:
 
-```
+```csharp
 using System.Reflection;
 using Library;
 using ProtectedLibrary;
@@ -74,7 +74,7 @@ Here are some tips:
 
 We can declare an interface with only the public method.
 
-```
+```csharp
 public interface IProtectedClass
 {
     public void PublicMethod();
@@ -100,7 +100,7 @@ We are going to expose the _IProtectedClass_ interface instead of _ProtectedClas
 
 We are going to use a Factory to instantiate _ProtectedClass_, and we will not allow the client application to create the concrete class directly
 
-```
+```csharp
 public class Factory
 {
     public static IProtectedClass GetProtectedClass()
@@ -114,7 +114,7 @@ public class Factory
 
 Finally, we use the internal access modifier to make _ProtectedClass_ visible only within the current project.
 
-```
+```csharp
 internal class ProtectedClass: IProtectedClass
 {
   // Code omitted
@@ -123,7 +123,7 @@ internal class ProtectedClass: IProtectedClass
 
 If we try to access the _PrivateMethod_ we will got the following errors  
 
-```
+```csharp
 var flags = BindingFlags.NonPublic | BindingFlags.Instance;
 
 // var privateMethod = typeof(ProtectedClass) <- this cause compilation error

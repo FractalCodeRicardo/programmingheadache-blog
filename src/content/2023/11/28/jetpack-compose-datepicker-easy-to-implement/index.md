@@ -19,7 +19,7 @@ We are going to use the Calendar Picker in this github repo:
 
 First, we put the dependencies of the Calendar library in the build.gradle.kts file
 
-```
+```kotlin
 dependencies {
 
     implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
@@ -30,7 +30,7 @@ dependencies {
 
 Next, lets create a new Composable and put the example given by the library
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDatePicker() {
@@ -57,7 +57,7 @@ This is how the example looks like
 
 Now, lets put a TextField to show the date
 
-```
+```kotlin
     TextField(
         value = selectedDate.value.format(DateTimeFormatter.ISO_DATE) ,
         onValueChange = {}
@@ -68,13 +68,13 @@ Now, lets put a TextField to show the date
 
 Now, we need to add functionality to open the dialog. We want that the dialog opens when the TextField is clicked. So, we need a variable that handles the open state.
 
-```
+```kotlin
  val open = remember { mutableStateOf(false)}
 ```
 
 And we add the clicked event
 
-```
+```kotlin
     TextField(
         modifier = Modifier.clickable { //Click event
             open.value = true
@@ -86,7 +86,7 @@ And we add the clicked event
 
 You will notice that the click event **does not work** you have to disable the TextField and modify the colors.
 
-```
+```kotlin
     TextField(
         modifier = Modifier.clickable { //Click event
             open.value = true
@@ -106,7 +106,7 @@ You will notice that the click event **does not work** you have to disable the T
 
 Finally, we display the dialog only when open state is true
 
-```
+```kotlin
     if (open.value) {
         CalendarDialog(
             state = rememberUseCaseState(visible = true, true, onCloseRequest = { } ),
@@ -127,7 +127,7 @@ Finally, we display the dialog only when open state is true
 
 Additionally, we are going to add the parameters to change the value from outside the composable
 
-```
+```kotlin
 fun CustomDatePicker(
     value: LocalDate,
     onValueChange: (LocalDate) -> Unit
@@ -136,7 +136,7 @@ fun CustomDatePicker(
 
 We can use the Composable like this
 
-```
+```kotlin
 @Preview
 @Composable
 fun CustomDatePickerPreview(){
@@ -152,7 +152,7 @@ fun CustomDatePickerPreview(){
 
 This is the whole code
 
-```
+```kotlin
 import androidx.compose.foundation.clickable
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme

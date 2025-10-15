@@ -16,7 +16,7 @@ Material3 has two components that are easy to use when we need to use dates.
 
 This component is straightforward to use. With just few lines you can have basic functionality
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDatePicker() {
@@ -31,7 +31,7 @@ fun CustomDatePicker() {
 
 This component it is just a dialog for holding the datepicker
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDatePicker() {
@@ -50,7 +50,7 @@ Using both components we can build a a custom datepicker acording our requerimen
 
 1\. First, we put a TextField and a Button
 
-```
+```kotlin
 val date = remember { mutableStateOf(LocalDate.now())}
     Row(verticalAlignment = Alignment.CenterVertically) {
         OutlinedTextField(
@@ -70,7 +70,7 @@ val date = remember { mutableStateOf(LocalDate.now())}
 
 2\. Next, we add a new composable with the dialog
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDatePickerDialog(
@@ -99,13 +99,13 @@ fun CustomDatePickerDialog(
 
 3\. Then we add a variable to show/hide the dialog
 
-```
+```kotlin
 val isOpen = remember { mutableStateOf(false)}
 ```
 
 And we set the value using the onAccept and onCancel events
 
-```
+```kotlin
 @Composable
 fun CustomDatePicker() {
     val date = remember { mutableStateOf(LocalDate.now())}
@@ -142,7 +142,7 @@ fun CustomDatePicker() {
 
 4\. Finally, we set the value in the TextField
 
-```
+```kotlin
 CustomDatePickerDialog(
         onAccept = {
             isOpen.value = false // close dialog
@@ -162,7 +162,7 @@ CustomDatePickerDialog(
 
 The whole code looks like this
 
-```
+```kotlin
 @Composable
 fun CustomDatePicker() {
     val date = remember { mutableStateOf(LocalDate.now())}

@@ -20,7 +20,7 @@ First, lets configure the database and the table. If you don't now how to config
 
 Lets create the table
 
-```
+```kotlin
 @Entity(tableName = "colors")
 data class Color(
     @PrimaryKey(autoGenerate = true)
@@ -31,7 +31,7 @@ data class Color(
 
 This is the DAO
 
-```
+```kotlin
 @Dao
 interface ColorsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -44,7 +44,7 @@ interface ColorsDao {
 
 And this is the database
 
-```
+```kotlin
 
 @Database(entities = [Color::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
@@ -56,7 +56,7 @@ The basic idea to store the icons is get the name of the Icons in the _androidx.
 
 First, lets code a function to get the name of the Icon:
 
-```
+```kotlin
 fun getIconName(icon: ImageVector): String {
     return icon.name.split(".")[1]
 }
@@ -67,7 +67,7 @@ fun getIconName(icon: ImageVector): String {
 
 Now this is the code to convert the name of the icon to a ImageVector:
 
-```
+```kotlin
 fun iconByName(name: String): ImageVector {
     val cl = Class.forName("androidx.compose.material.icons.filled.${name}Kt")
     val method = cl.declaredMethods.first()
@@ -80,7 +80,7 @@ fun iconByName(name: String): ImageVector {
 
 With the previous code we can store the names of the icons in the table and convert it back to icons. With this code we save the icon's name:
 
-```
+```kotlin
 suspend fun saveIcon(db: AppDatabase, icon: ImageVector) {
     val name = getIconName(icon)
     val dao = db.colorsDao()
@@ -91,7 +91,7 @@ suspend fun saveIcon(db: AppDatabase, icon: ImageVector) {
 
 This is the code to get the icons form the database
 
-```
+```kotlin
 suspend fun getIcons(db: AppDatabase): List<ImageVector> {
      val records = db.colorsDao().getAll()
 
@@ -105,7 +105,7 @@ Lets build a simple example to use the code. We are going to show to the user a 
 
 We want a composable to pick the icons like this
 
-```
+```kotlin
 @Composable
 fun IconPicker(
     selectedIcon: ImageVector? = null,
@@ -117,7 +117,7 @@ fun IconPicker(
 
 Inside of the composable we are going to put a dropdown with the icons like this
 
-```
+```kotlin
 DropdownMenu(
     expanded = expanded,
     onDismissRequest = { expanded = false }
@@ -142,7 +142,7 @@ DropdownMenu(
 
 Once the icon is selected we are going to use a button to save it
 
-```
+```kotlin
 Button(onClick = {
     scope.launch {
         selectedIcon?.let { saveIcon(db, it) }
@@ -155,7 +155,7 @@ Button(onClick = {
 
 Finally we are going to show the saved icons
 
-```
+```kotlin
 savedColors.forEach {
     Row() {
         Icon(it, it.name)

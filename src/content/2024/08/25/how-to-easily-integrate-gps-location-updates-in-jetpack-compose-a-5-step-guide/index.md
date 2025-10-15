@@ -17,7 +17,7 @@ Integrating localization updates in Jetpack Compose is very easy. Follow these 5
 
 Add permissions in manifest file
 
-```
+```kotlin
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -38,7 +38,7 @@ Add google dependency
 
 In your build.gradle.kts add
 
-```
+```kotlin
 dependencies {
     implementation(libs.play.services.location)
     
@@ -48,7 +48,7 @@ dependencies {
 
 In your libs.version.toml add
 
-```
+```kotlin
 [versions]
 playServicesLocation = "21.3.0"
 
@@ -60,7 +60,7 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 
 In the Main Activity add some functions to check and request permissions
 
-```
+```kotlin
 class MainActivity : ComponentActivity() {
 
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
@@ -99,7 +99,7 @@ class MainActivity : ComponentActivity() {
 
 And call checkPermissions on create
 
-```
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -111,7 +111,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 State
 
-```
+```kotlin
 data class LocationState(
     val latitude: Double = 0.0,
     val longitude: Double = 0.0
@@ -120,7 +120,7 @@ data class LocationState(
 
 View model
 
-```
+```kotlin
 class LocationViewModel: ViewModel() {
     private val uiState = MutableStateFlow(LocationState())
     val state: StateFlow<LocationState> = uiState;
@@ -135,7 +135,7 @@ class LocationViewModel: ViewModel() {
 
 Screen
 
-```
+```kotlin
 @Composable
 fun LocationScreen(viewModel: LocationViewModel) {
     val state by viewModel.state.collectAsState()
@@ -154,7 +154,7 @@ fun LocationScreen(viewModel: LocationViewModel) {
 
 Add the screen as the content of your main activity
 
-```
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -172,7 +172,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 **5\. Initialize the location client and update the view model**
 
-```
+```kotlin
 class MainActivity : ComponentActivity() {
 
     private lateinit var locationClient: FusedLocationProviderClient
@@ -199,7 +199,7 @@ class MainActivity : ComponentActivity() {
 
 And finally call initUpdates on create method
 
-```
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -221,7 +221,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 This is the whole code
 
-```
+```kotlin
 package com.example.locationintegration
 
 import android.content.pm.PackageManager

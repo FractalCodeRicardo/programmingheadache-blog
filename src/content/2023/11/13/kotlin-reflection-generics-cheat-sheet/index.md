@@ -7,7 +7,7 @@ categories:
 
 Consider this class
 
-```
+```kotlin
 class ImAClass() {
     var property: Int = 0
 
@@ -20,7 +20,7 @@ class ImAClass() {
 
 We want to manipulate it using generics, so we create a class like this:
 
-```
+```kotlin
 class Reflection<T : Any>(
     private val kClass: KClass<T>
 ) {
@@ -107,14 +107,14 @@ class Reflection<T : Any>(
 
 **Create KClass and Reflection Class**
 
-```
+```kotlin
 val kclass = ImAClass::class
 val util = Reflection(kclass)
 ```
 
 **Create instance**
 
-```
+```kotlin
 fun instance(): T {
     return kClass.createInstance()
 }
@@ -126,7 +126,7 @@ println("Instance: $instance")
 
 Get properties
 
-```
+```kotlin
 fun properties(): Collection<KProperty<*>> {
     return kClass.memberProperties
 }
@@ -138,7 +138,7 @@ properties.forEach { println("Property: $it") }
 
 **Get property by name**
 
-```
+```kotlin
 fun getProperty(propName: String): KProperty<*>? {
     return kClass
         .memberProperties
@@ -153,7 +153,7 @@ println("Property by name: $prop")
 
 **Get functions**
 
-```
+```kotlin
 fun functions(): Collection<KFunction<*>> {
     return kClass.functions
 }
@@ -165,7 +165,7 @@ functions.forEach { println("Function: $it") }
 
 **Get function by name**
 
-```
+```kotlin
 fun getFunction(functionName: String): KFunction<*>? {
     return kClass
         .functions
@@ -180,7 +180,7 @@ println("Function by name: $function")
 
 **Set property value by name**
 
-```
+```kotlin
 fun <V> setValueByName(propName: String, instance: T, value: V) {
     val prop = getProperty(propName)
 
@@ -201,7 +201,7 @@ println("Set value by name: ${instance.property}")
 
 **Get Value with property name**
 
-```
+```kotlin
 fun getValueByName(propName: String, instance: T): Any? {
     val prop = getProperty(propName)
 
@@ -223,7 +223,7 @@ println("Get value by name: ${value}")
 
 **Set Value with property**
 
-```
+```kotlin
 fun <V> setValue(prop: KMutableProperty1<T, V>, instance: T, value: V) {
     prop.set(instance, value)
 }
@@ -235,7 +235,7 @@ println("Set value with property ${instance.property}")
 
 **Get Value with property**
 
-```
+```kotlin
 fun <V> getValue(prop: KMutableProperty1<T, V>, instance: T): V {
    return prop.get(instance)
 }
@@ -247,7 +247,7 @@ println("Get value with property $value1")
 
 **Call function by name**
 
-```
+```kotlin
 fun callByName(functionName: String, vararg args: Any?): Any? {
     val function = getFunction(functionName)
 
@@ -264,7 +264,7 @@ println("Call function, param: $value2")
 
 **Call with function**
 
-```
+```kotlin
 fun call(function: KFunction<*>, vararg args: Any?): Any? {
     return function.call(*args)
 }

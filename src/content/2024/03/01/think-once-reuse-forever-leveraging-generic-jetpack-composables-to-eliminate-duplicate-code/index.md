@@ -15,7 +15,7 @@ We will see a brief and simple example of how to avoid duplicate code using gene
 
 Consider the following models in our project
 
-```
+```kotlin
 data class Beer(
     val name: String = "",
     val alcoholByVolume: Double = 0.0,
@@ -37,7 +37,7 @@ data class Soda(
 
 We want to display a list of each model. A naive approach would be create a list of each model. Something like this.
 
-```
+```kotlin
 // BEERS
 @Composable
 fun ListBeers(
@@ -169,7 +169,7 @@ As you can see, the lists are very similar; they share the same structure, title
 
 We will send the common elements (title and content details) as parameters, and we will use generics to specify the type.
 
-```
+```kotlin
 @Composable
 fun <T: Any> GenericList(
     items: List<T>,
@@ -182,7 +182,7 @@ fun <T: Any> GenericList(
 
 And we use the title and content
 
-```
+```kotlin
 @Composable
 fun <T: Any> GenericList(
     items: List<T>,
@@ -224,7 +224,7 @@ fun <T: Any> GenericList(
 
 Now, see how clean the new lists are
 
-```
+```kotlin
 // BEERS
 @Composable
 fun NewBeersList(items: List<Beer>) {

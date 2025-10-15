@@ -23,7 +23,7 @@ Suppose we have a user screen like this
 
 We would like to have some annotations in our state that perform the validation. Something like this
 
-```
+```kotlin
 data class UserState(
     
     @property:NotEmptyValidation() // <- we want this
@@ -40,13 +40,13 @@ data class UserState(
 
 We will use reflection, so ensure you have this line in your build.gradle file (replace the versión if it is needed):
 
-```
+```kotlin
 implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.22")
 ```
 
 1. Firstly, lets create the annotations
 
-```
+```kotlin
 @Target( AnnotationTarget.PROPERTY)
 annotation class NotEmptyValidation()
 
@@ -59,7 +59,7 @@ annotation class PasswordValidation()
 
 2\. Second, lets create a class to store the result of the validation
 
-```
+```kotlin
 data class ValidationError(
     val property: String = "",
     val message: String = ""
@@ -68,7 +68,7 @@ data class ValidationError(
 
 3\. We add this class in the state
 
-```
+```kotlin
 data class UserState(
 
     @property:NotEmptyValidation()
@@ -87,7 +87,7 @@ data class UserState(
 
 4\. Now we are going to create a class to perform the validation. The idea of the class is to iterate over the state properties, find the annotations and perform the validations.
 
-```
+```kotlin
 class ValidateState<State: Any>(
     // we are going to use reflection so we pass the KClass instance
     val kClass: KClass<State>
@@ -101,7 +101,7 @@ class ValidateState<State: Any>(
 
 5\. We iterate over the properties to find the annotations
 
-```
+```kotlin
  fun validate(state: State): ValidationError? {
         kClass.memberProperties.forEach {
             if (it.annotations.isEmpty())
@@ -129,7 +129,7 @@ class ValidateState<State: Any>(
 
 The whole class looks like this
 
-```
+```kotlin
 class ValidateState<State: Any>(
     // we are going to use reflection so we pass the KClass instance
     val kClass: KClass<State>
@@ -186,7 +186,7 @@ class ValidateState<State: Any>(
 
 6\. Next we use the class in the save method of our view model
 
-```
+```kotlin
     fun save() {
         val stateValidator = ValidateState(UserState::class);
         val error = stateValidator.validate(state.value)
@@ -199,7 +199,7 @@ class ValidateState<State: Any>(
 
 7\. In the view, we add the validation message if the error exists. For example, the name field would look like this
 
-```
+```kotlin
  @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserScreen(viewModel: UserViewModel) {
@@ -222,7 +222,7 @@ fun UserScreen(viewModel: UserViewModel) {
 
 8\. Finally we add the error message in a text field
 
-```
+```kotlin
 
  @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -247,7 +247,7 @@ The final result looks like this
 
 This is the whole code if you want to see details
 
-```
+```kotlin
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

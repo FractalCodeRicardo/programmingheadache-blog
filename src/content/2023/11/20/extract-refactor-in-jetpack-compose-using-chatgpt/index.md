@@ -9,7 +9,7 @@ categories:
 
 We want our composable screens cleaner and one way to achieve it is extracting our composable components in smaller functions. Consider the following example. I have a screen with three fields and I want to make it more readable.
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(viewModel: ProfileViewModel) {
@@ -120,7 +120,7 @@ So, I asked ChatGPT to put each field in separate functions
 
 Now the main screen is cleaner
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(viewModel: ProfileViewModel) {
@@ -171,7 +171,7 @@ The fix is straightforward
 
 Now our fields section is very clean
 
-```
+```kotlin
 Column(
         modifier = Modifier
             .fillMaxSize()

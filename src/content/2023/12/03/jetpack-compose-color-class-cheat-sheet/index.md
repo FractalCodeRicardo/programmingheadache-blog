@@ -10,7 +10,7 @@ Here are some useful codes for handling _androidx.compose.ui.graphics.Color_ cla
 
 Predefined colors that you can use
 
-```
+```kotlin
 var red = Color.Red
 var black = Color.Black
 var blue = Color.Blue
@@ -26,7 +26,7 @@ var yellow = Color.Yellow
 
 Create a color from RGB
 
-```
+```kotlin
 // Create color from RGB
 val red = 255
 val green = 255
@@ -37,7 +37,7 @@ val color = Color(red, green, blue)
 
 Create a color from RGBA
 
-```
+```kotlin
 // Create color from RGBA
 val red = 255
 val green = 255
@@ -49,7 +49,7 @@ val color = Color(red, green, blue, alpha)
 
 Create a color from hexadecimal RGB string
 
-```
+```kotlin
 // Create from hexadecimal
 val hexadecimal = "#AABBCC" // AA: Green, BB: Red, CC: Blue
 val color  = Color(hexadecimal.toColorInt())
@@ -57,7 +57,7 @@ val color  = Color(hexadecimal.toColorInt())
 
 Create a color from hexadecimal RGBA string
 
-```
+```kotlin
 // Create from hexadecimal
 // FF: Alpha (00 transparent FF Solid) AA: Green, BB: Red, CC: Blue
 val hexadecimal = "#FFAABBCC"
@@ -66,7 +66,7 @@ val color  = Color(hexadecimal.toColorInt())
 
 Create color from name
 
-```
+```kotlin
 val red = "red"
 val color = Color(red.toColorInt())
 
@@ -78,7 +78,7 @@ val color = Color(red.toColorInt())
 
 Create color from hexadecimal number
 
-```
+```kotlin
 // FF: Alpha (00 transparent FF Solid) AA: Green, BB: Red, CC: Blue
 val hex = 0xFFAABBCC
 val color = Color(hex)
@@ -86,7 +86,7 @@ val color = Color(hex)
 
 Represent color as an integer
 
-```
+```kotlin
 val red = Color.Red
 val intColor = red.toArgb()
 
@@ -96,7 +96,7 @@ val redColor = Color(intColor)
 
 Represent color as an String
 
-```
+```kotlin
 val red = Color.Red
 
 // #FF0000

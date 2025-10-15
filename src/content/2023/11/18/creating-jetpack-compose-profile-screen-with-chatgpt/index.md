@@ -31,7 +31,7 @@ I started with a simple pompt like this
 
 This is the code that it gave me
 
-```
+```kotlin
 package com.example.profile_screen.screens
 
 import android.os.Bundle
@@ -138,7 +138,7 @@ Now I want the the user select the profile picture.
 
 It changed the profile image field and add a functión to select an image. This is the new function:
 
-```
+```kotlin
 var userProfile by remember { mutableStateOf(userProfile) }
 val getContent = rememberLauncherForActivityResult(
     contract = ActivityResultContracts.GetContent()) { uri: Uri? ->
@@ -150,7 +150,7 @@ val getContent = rememberLauncherForActivityResult(
 
 And the profile image field now calls the _getContent_ function
 
-```
+```kotlin
     Box(
             modifier = Modifier
                 .size(120.dp)
@@ -183,11 +183,11 @@ And the profile image field now calls the _getContent_ function
 
 The code did not show the selected image, so I added a new dependency and changed some code  
 
-```
+```kotlin
 implementation("io.coil-kt:coil-compose:2.5.0")
 ```
 
-```
+```kotlin
 if (userProfile.profileImageUri != null) {
     Image(
         // I replace this line
@@ -208,7 +208,7 @@ if (userProfile.profileImageUri != null) {
 
 It was necesary to add permissions to read the image, so I added a line when the image is picked
 
-```
+```kotlin
 uri?.let {
   //Permissions to read the uri
   context.contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION )
@@ -226,7 +226,7 @@ For the ViewModel, this was my prompt
 
 And ChatGPT gave me this code
 
-```
+```kotlin
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -269,7 +269,7 @@ class ProfileViewModel : ViewModel() {
 
 Nowadays the prefered way to update the view model is using the update method, so I changed it. I made some renames too, and I change the Uri parameter for a string because it is easier to store in the database.
 
-```
+```kotlin
 
 class ProfileViewModel : ViewModel() {
 
@@ -306,7 +306,7 @@ First I'm going to create the data model and and data access objects
 
 ChatGPT did a great job! I didn't have to ask for the Dao neither for the database class. It gave me this code
 
-```
+```kotlin
 
 @Entity(tableName = "user_profiles")
 data class UserProfileEntity(
@@ -336,7 +336,7 @@ abstract class AppDatabase : RoomDatabase() {
 
 I'm going to make changes acoording my needs
 
-```
+```kotlin
 @Entity(tableName = "profile")
 data class Profile(
     @PrimaryKey(autoGenerate = true)
@@ -365,7 +365,7 @@ abstract class AppDatabase : RoomDatabase() {
 
 To add the database to the ViewModel just add two simple methods
 
-```
+```kotlin
     fun load() {
         viewModelScope.launch {
             val profiles = database.profileDao().getAll()
@@ -405,13 +405,13 @@ To add the database to the ViewModel just add two simple methods
 
 And I pass the database in the constructor
 
-```
+```kotlin
 class ProfileViewModel(private val database: AppDatabase) : ViewModel()
 ```
 
 Then I add the view model in the screen. For example to bind the email field with the view model I change the value and onValueChange properties of the composable
 
-```
+```kotlin
 val state by viewModel.state.collectAsState()
 
 OutlinedTextField(

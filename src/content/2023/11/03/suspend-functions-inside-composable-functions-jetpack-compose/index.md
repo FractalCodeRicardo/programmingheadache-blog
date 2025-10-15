@@ -15,12 +15,12 @@ On common error using Jetpack compose is when you try to use suspend functions i
 
 An easy workaround for this is using the _rememberCoroutineScope()_ function
 
-```
+```kotlin
 val scope = rememberCoroutineScope()
 ```
 
 Then wrap your code like this
 
-```
+```kotlin
 scope.launch { /* Put your code here */ }
 ```

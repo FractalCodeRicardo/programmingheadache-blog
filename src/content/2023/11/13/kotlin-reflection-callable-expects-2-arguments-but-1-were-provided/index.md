@@ -7,7 +7,7 @@ categories:
 
 When using reflection in Kotlin, this problem arises because you try to call a function without sendind the instance class as parameter.
 
-```
+```kotlin
 class ImAClass() {
     fun function(param: Int): Int {
         println("Function called, params: $param ")
@@ -18,7 +18,7 @@ class ImAClass() {
 
 If you call the function like this
 
-```
+```kotlin
 ImAClass::function.call(1)
 ```
 
@@ -35,7 +35,7 @@ at MainKt.main(Main.kt)
 
 So, you have to send an instance of the class first.
 
-```
+```kotlin
 ImAClass::function.call(ImAClass(), 1)
 ```
 

@@ -16,14 +16,14 @@ For the dialog, we are going to use the library in this github repo:
 
 First, lets add the dependencies of the library
 
-```
+```kotlin
 implementation("com.maxkeppeler.sheets-compose-dialogs:core:1.2.0")
 implementation("com.maxkeppeler.sheets-compose-dialogs:color:1.2.0")
 ```
 
 In the github repo there are many examples for color dialogs, so lets try the next one
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ColorPicker() {
@@ -48,7 +48,7 @@ This is how it looks like
 
 Next, we add a textfield for the description
 
-```
+```kotlin
  OutlinedTextField(
         value = "#${color.value.toHexString().uppercase()}",
         onValueChange = {}
@@ -57,13 +57,13 @@ Next, we add a textfield for the description
 
 And we add the events to open the dialog. We want that the dialog opens when the TextField is clicked. We add a state variable for this
 
-```
+```kotlin
 val open = remember { mutableStateOf(false) }
 ```
 
 And we implement the click event
 
-```
+```kotlin
 OutlinedTextField(
         modifier = Modifier.clickable { open.value = true },
         value = "#${color.value.toHexString().uppercase()}",
@@ -73,7 +73,7 @@ OutlinedTextField(
 
 You will notice that the click event does not work. You need to add the enable=false attribute and fix the colors.
 
-```
+```kotlin
 OutlinedTextField(
         enabled = false, // Add this to make click event work
         modifier = Modifier.clickable { open.value = true },
@@ -92,7 +92,7 @@ OutlinedTextField(
 
 We show the dialog only when open.value is true, and we set open.value=false when the dialog is closed
 
-```
+```kotlin
 if (open.value) {
         ColorDialog(
             state = rememberUseCaseState(visible = true, onCloseRequest = { open.value = false }),
@@ -113,7 +113,7 @@ if (open.value) {
 
 Finally we add the value and onChange parameters
 
-```
+```kotlin
 fun ColorPicker(
     value: Color,
     onChangeValue: (Color) -> Unit
@@ -122,7 +122,7 @@ fun ColorPicker(
 
 And we can use it like this:
 
-```
+```kotlin
 @Composable
 @Preview
 fun ColorPickerPreview() {
@@ -138,7 +138,7 @@ fun ColorPickerPreview() {
 
 This is the whole code
 
-```
+```kotlin
 
 import androidx.compose.foundation.clickable
 import androidx.compose.material3.ExperimentalMaterial3Api

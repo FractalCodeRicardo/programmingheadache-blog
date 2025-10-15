@@ -26,7 +26,7 @@ This guide helps you achieve three essential functions:
 
 First lets create an object to keep the identifier of the screens
 
-```
+```kotlin
 object Screens {
     val ProfileScreen = "ProfileScreen"
     val SettingsScreen = "SettingScreen"
@@ -36,7 +36,7 @@ object Screens {
 
 We want a function that returns the name of the screen
 
-```
+```kotlin
 fun screenName(screen: String): String {
     return when (screen) {
         Screens.ProfileScreen -> "Profile"
@@ -49,7 +49,7 @@ fun screenName(screen: String): String {
 
 With this composable we create the drawer item
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DrawerItem(screen: String) {
@@ -66,7 +66,7 @@ fun DrawerItem(screen: String) {
 
 Then we are going to create the drawer and we add each drawer item to the drawer
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer() {
@@ -96,7 +96,7 @@ Looks like this
 
 Lets create our screens and a main screen.
 
-```
+```kotlin
 @Composable
 fun ProfileScreen() {
     Text(screenName(Screens.ProfileScreen))
@@ -115,7 +115,7 @@ fun UserScreen() {
 
 Our main screen will be very simple. It will display the current screen.
 
-```
+```kotlin
 @Composable
 fun MainScreen(currentScreen: String) {
     if (currentScreen == Screens.ProfileScreen) {
@@ -137,7 +137,7 @@ fun MainScreen(currentScreen: String) {
 
 We add the main screen to the scaffold an we add a variable state to keep track of the current screen.
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
@@ -158,7 +158,7 @@ fun NavigationScaffold() {
 
 Now we are going to add the drawer and the Scaffold. First lets add a parameter in the drawer to pass the scaffold.
 
-```
+```kotlin
 fun NavigationDrawer(scaffoldContent:@Composable () -> Unit){
   // Ommited
 }
@@ -166,7 +166,7 @@ fun NavigationDrawer(scaffoldContent:@Composable () -> Unit){
 
 And we call it inside of the drawer content
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer(scaffoldContent: () -> Unit) {
@@ -195,13 +195,13 @@ It looks like this until now
 
 Lets add the event when the drawer item is clicked. First we add the click event on the DrawerItem
 
-```
+```kotlin
 fun DrawerItem(screen: String, onClick: () -> Unit) {
   // Ommited
 }
 ```
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DrawerItem(screen: String, onClick: () -> Unit) {
@@ -219,7 +219,7 @@ fun DrawerItem(screen: String, onClick: () -> Unit) {
 
 Then we add a screen changed event in the NavigationDrawer
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer(
@@ -230,7 +230,7 @@ fun NavigationDrawer(
 }
 ```
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawer(
@@ -278,7 +278,7 @@ fun NavigationDrawer(
 
 And we use the event like this:
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BasicCustomNavigation() {
@@ -306,7 +306,7 @@ Now lets add the functionality to go to previous screen. First we are going to c
 
 Lets create the open menu button and the go back button
 
-```
+```kotlin
 @Composable
 fun GoBackButton (onClick: () -> Unit) {
     IconButton(onClick = { onClick() }) {
@@ -330,7 +330,7 @@ fun OpenMenuButton(onClick: () -> Unit) {
 
 And we add the buttons in the top bar
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(
@@ -355,7 +355,7 @@ fun TopBar(
 
 Now lets add the top bar and implement the open menu and go back events
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationScaffold(
@@ -386,7 +386,7 @@ fun NavigationScaffold(
 
 And this is our main composable
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview
@@ -428,7 +428,7 @@ I added some colors and this is the result
 
 This is the final code
 
-```
+```kotlin
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

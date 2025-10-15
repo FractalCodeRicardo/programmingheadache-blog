@@ -22,7 +22,7 @@ Consider this typical table structure in a sales system, where we have a Product
 
 Using Code First - EF we have something like this
 
-```
+```csharp
 public class Category
 {
     public int CategoryId { get; set; }
@@ -50,7 +50,7 @@ We want to retrieve all products along with their category information.
 
 This is the recommended way to do it nowadays and it consists in using the include method to fill the Category property.
 
-```
+```csharp
 var context = new Context();
 var products = context.Products
         .Include(i => i.Category)
@@ -61,7 +61,7 @@ var products = context.Products
 
 In some cases, when we don't have the navigation property and, if the database is small, we can use this alternative approach:
 
-```
+```csharp
 var context = new Context();
 var products = context.Products
         .ToList();
@@ -78,7 +78,7 @@ foreach (var product in products)
 
 We can reduce the number of database calls by implementing a caching mechanism. A straightforward approach is to use a dictionary:
 
-```
+```csharp
 var context = new Context();
 var cache = new Dictionary<int, Category>();
 
@@ -107,7 +107,7 @@ foreach (var product in products)
 
 Instead of making multiple database calls, we can try to retrieve all the data at once (this have restrictions in some database engines)
 
-```
+```csharp
 var context = new Context();
 var products = context.Products
         .ToList();
@@ -136,7 +136,7 @@ foreach (var product in products)
 
 We can use SQL like syntax that internally will cross the data using SQL
 
-```
+```csharp
 var context = new Context();
 var res = from product in context.Products
           join category in context.Categories
@@ -154,7 +154,7 @@ var list = res.ToList();
 
 We can use an raw SQL query using SqlQuery method
 
-```
+```csharp
 var context = new Context();
 var query = context.Database
                 .SqlQuery<ProductDto>(

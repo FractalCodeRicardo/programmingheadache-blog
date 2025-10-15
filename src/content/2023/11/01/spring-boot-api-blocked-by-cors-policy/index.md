@@ -15,7 +15,7 @@ Access to fetch at 'http://localhost:8080/' from origin 'null' has been blocked 
 
 An easy fix to workaround with the problem is to use the @CrossOrigin annotation. Consider a controller like this
 
-```
+```java
 @RestController
 public class SayHi {
 
@@ -29,7 +29,7 @@ public class SayHi {
 
 You just have to add the annotation in the class definition
 
-```
+```java
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

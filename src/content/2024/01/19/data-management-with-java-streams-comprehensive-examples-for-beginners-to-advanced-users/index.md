@@ -13,7 +13,7 @@ We'll commence with straightforward examples and progressively delve into more a
 
 Consider the following class
 
-```
+```java
 public class Animal {
 
     private String name;
@@ -71,7 +71,7 @@ public class Animal {
 
 We are going to use this data for the examples
 
-```
+```java
 public static Stream<Animal> animals() {
     List<Animal> animals = Arrays.asList(
             new Animal("Lion", "Mammal", 190.0, 3.5),
@@ -94,7 +94,7 @@ public static Stream<Animal> animals() {
 
 We are going to use this auxiliary functions to print results
 
-```
+```java
 public static void printAnimals(Stream<Animal> animals) {
     animals.forEach(i -> print(i.getName() + " "));
 }
@@ -133,7 +133,7 @@ public static <T> void print(T object) {
 
 1. Iterate over the stream printing the names
 
-```
+```java
 // 1. Iterate over the stream printing the names
 animals().forEach(i -> println(i.getName()));
 
@@ -153,7 +153,7 @@ animals().forEach(i -> println(i.getName()));
 
 2\. Filter the animals to get only the birds
 
-```
+```java
 // 2. Filter the birds to get only the birds
   var birds = animals().filter(i -> i.getType().equals("Bird"));
   printAnimals(birds);
@@ -164,7 +164,7 @@ animals().forEach(i -> println(i.getName()));
 
 3\. Find the first Hawk
 
-```
+```java
 // 3. Find the first Hawk 
 
 var hawk = animals()
@@ -182,7 +182,7 @@ if (hawk.isPresent()) {
 
 4\. Get the animals sorted by height
 
-```
+```java
 // 4. Get the animals sorted by height
 
 var smallestAnimalsFirst = animals()
@@ -197,7 +197,7 @@ smallestAnimalsFirst.forEach(i -> print(String.format("%s(%s) ", i.getName(), i.
 
 5\. Map the stream to a new stream with only names and types
 
-```
+```java
 // 5. Map the stream to a new stream with only names and types
 
 var justNamesAndTypes = animals().map(i -> new Object() {
@@ -214,7 +214,7 @@ justNamesAndTypes.forEach(i -> print(String.format("%s/%s ", i.name, i.type)));
 
 6\. Get the smallest animal
 
-```
+```java
 // 6. Get the smallest animal
 
 var smallestAnimal = animals()
@@ -230,7 +230,7 @@ if (smallestAnimal.isPresent()) {
 
 7\. Get the biggest animal
 
-```
+```java
 // 7. Get the biggest animal
 //
 var biggestAnimal = animals()
@@ -245,7 +245,7 @@ if (biggestAnimal.isPresent()) {
 
 8\. Group animals by type
 
-```
+```java
 //     8. Group animals by type
 
   var groupsByType = animals().
@@ -264,7 +264,7 @@ if (biggestAnimal.isPresent()) {
 
 9\. Sum the heights of all animals
 
-```
+```java
 // 9. Sum the heights of all animals
 var sumHeight = animals().mapToDouble(i -> i.getHeight()).sum();
 print(sumHeight);
@@ -275,7 +275,7 @@ print(sumHeight);
 
 10\. Remove duplicated Hawks
 
-```
+```java
 // 10. Remove hawks duplicated
 
 var removedDuplicated = animals()
@@ -291,7 +291,7 @@ print(removedDuplicated.findFirst().get());
 
 11\. Get name of smallest mammal or nothing
 
-```
+```java
 // 11. Get name of smallest mammal or nothing
         
 var smallestMammal = animals()
@@ -310,7 +310,7 @@ if (smallestAnimal.isPresent()) {
 
 12\. Get the smallest animal of each type
 
-```
+```java
 var smallestOfGroups = animals()
         .collect(Collectors.groupingBy(i -> i.getType()))
         .entrySet()
@@ -335,7 +335,7 @@ smallestOfGroups
 
 13\. Get the sum height of each group
 
-```
+```java
 // 13. Get the sum height of each group
 var sumEachGroup = animals()
         .collect(Collectors.groupingBy(i -> i.getType()))
@@ -360,7 +360,7 @@ sumEachGroup
 
 14\. Get the animals that contains 'in' in the name sorted by height
 
-```
+```java
 //14. Get the animals that contains 'in' in the name sorted by height
 
 var animalsWithIn = animals()
@@ -375,7 +375,7 @@ printAnimals(animalsWithIn);
 
 15\. Get the names of the mammals with weight over 100
 
-```
+```java
 // 15. Get the names of the mammals with weight over 100
 var namesMammalsOver100 = animals()
         .filter(i -> i.getType().equals("Mammal"))
@@ -390,7 +390,7 @@ printStrings(namesMammalsOver100);
 
 This is the whole code
 
-```
+```java
 package org.example;
 
 import java.util.Arrays;

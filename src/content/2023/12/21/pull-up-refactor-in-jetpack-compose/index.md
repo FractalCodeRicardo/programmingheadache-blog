@@ -30,7 +30,7 @@ Client
 
 They both **share the header and the submit button**. The basic structure code of both is the following:
 
-```
+```kotlin
 data class Client(
     val name: String = "",
     val email: String = "",
@@ -78,7 +78,7 @@ fun OrderScreen(order: Order) {
 
 Now lets create a new composable with the common code and we send the form content as a parameter.
 
-```
+```kotlin
 @Composable
 fun TemplateForm(
     onSubmit: () -> Unit,
@@ -94,7 +94,7 @@ fun TemplateForm(
 
 And we use it like this:
 
-```
+```kotlin
 @Composable()
 private fun OrderScreen(order: Order) {
     TemplateForm(
@@ -116,7 +116,7 @@ private fun ClientScreen(client: Client) {
 
 This is the whole code:
 
-```
+```kotlin
 @Composable
 fun TemplateForm(
     onSubmit: () -> Unit,

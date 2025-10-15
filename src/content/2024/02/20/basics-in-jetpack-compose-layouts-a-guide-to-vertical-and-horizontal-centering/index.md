@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=cO1H3PMZWwM
 
 1\. Create the screen
 
-```
+```kotlin
 @Composable
 fun CenterVerticallyScreen() {
 
@@ -32,7 +32,7 @@ fun CenterVerticallyScreen() {
 
 2\. Create a preview
 
-```
+```kotlin
 @Composable
 @Preview
 fun CenterVerticallyPreview() {
@@ -46,7 +46,7 @@ fun CenterVerticallyPreview() {
 
 3\. Create a column with fill max size or fill max height
 
-```
+```kotlin
 @Composable
 fun CenterVerticallyScreen() {
 
@@ -60,7 +60,7 @@ fun CenterVerticallyScreen() {
 
 4\. Add the thing you want to center
 
-```
+```kotlin
 @Composable
 fun CenterVerticallyScreen() {
 
@@ -74,7 +74,7 @@ fun CenterVerticallyScreen() {
 
 5\. Add vertical arrangement
 
-```
+```kotlin
 @Composable
 fun CenterVerticallyScreen() {
     Column(
@@ -100,7 +100,7 @@ https://www.youtube.com/watch?v=RlTWB34uGSI
 
 1\. Create the screen
 
-```
+```kotlin
 @Composable
 fun CenterHorizontallyScreen() {
 
@@ -109,7 +109,7 @@ fun CenterHorizontallyScreen() {
 
 2\. Create a preview
 
-```
+```kotlin
 @Composable
 @Preview
 fun CenterHorizontallyPreview() {
@@ -123,7 +123,7 @@ fun CenterHorizontallyPreview() {
 
 3\. Add a row with fill max size or fill max width
 
-```
+```kotlin
 @Composable
 fun CenterHorizontallyScreen() {
     Row(
@@ -135,7 +135,7 @@ fun CenterHorizontallyScreen() {
 
 4\. Add the thing you want to center
 
-```
+```kotlin
 @Composable
 fun CenterHorizontallyScreen() {
     Row(

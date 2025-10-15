@@ -21,7 +21,7 @@ Prompt:
 
 Output:
 
-```
+```kotlin
 @Composable
 fun UserScreen() {
     Column(
@@ -152,7 +152,7 @@ Im going to ask Gemini for two simple functions:
 
 This is the code
 
-```
+```kotlin
 fun isValidEmail(email: String): Boolean {
     val regex = Regex("^([a-zA-Z0-9_\\.\\-\\+]+)@([a-zA-Z0-9\\-]+)\\.([a-zA-Z]{2,6})(\\.[a-zA-Z]{2,6})?$")
     return regex.matches(email)
@@ -172,7 +172,7 @@ To test the code it gave me before I'm going to ask for the unit tests of the tw
 
 This is the code
 
-```
+```kotlin
 @Test
 fun testValidEmail() {
     val validEmails = listOf(
@@ -241,7 +241,7 @@ Let's see if Gemini can code the snake game in jetpack!
 
 ![](images/image-7.png)
 
-```
+```kotlin
 @Composable
 fun SnakeGameScreen(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
@@ -297,7 +297,7 @@ private fun generateFoodPosition() {
 
 In this case the code didn't work at all and I asked a lot of things but it does not work very well. This is the best i can get.
 
-```
+```kotlin
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box

@@ -14,7 +14,7 @@ In certain scenarios, users need to search and select a record from a table. Imp
 
 First, lets create a data class and a list for the example
 
-```
+```kotlin
 data class Animal(
     val name: String = "",
     val type: String = "",
@@ -34,7 +34,7 @@ val animals = listOf(
 
 We want to know the name and the order of the columns. We are going to use an annotation to do it.
 
-```
+```kotlin
 @Retention(AnnotationRetention.RUNTIME)
 annotation class ColumnTable(
     val name: String,
@@ -44,7 +44,7 @@ annotation class ColumnTable(
 
 And we use it over the animals class
 
-```
+```kotlin
 data class Animal(
 
     @property: ColumnTable("Name", 0)
@@ -71,19 +71,19 @@ Lets start to build the table. First, we want to show the column headers. We nee
 
 We are going to use generics so you have to add this dependency (update the version)
 
-```
+```kotlin
 implementation("org.jetbrains.kotlin:kotlin-reflect:1.9.21")
 ```
 
 Now you can access to the List of properties with this code
 
-```
+```kotlin
 var properties = T::class.memberProperties // Where T is Animals in this case
 ```
 
 And we can use a function like this to get the ColumnTable annotation
 
-```
+```kotlin
 fun <T : Any> findAnnotation(property: KProperty1<T, *>): ColumnTable? {
     return property
         .annotations
@@ -93,7 +93,7 @@ fun <T : Any> findAnnotation(property: KProperty1<T, *>): ColumnTable? {
 
 To get the column names we are going to use this function
 
-```
+```kotlin
 inline fun <reified T : Any> columnsNames(): List<String> {
     val properties = T::class.memberProperties
 
@@ -106,7 +106,7 @@ inline fun <reified T : Any> columnsNames(): List<String> {
 
 Now lets create a simple composable that show those column names
 
-```
+```kotlin
 @Composable()
 inline fun <reified T : Any> Headers() {
     val columns = columnsNames<T>()
@@ -127,14 +127,14 @@ inline fun <reified T : Any> Headers() {
 
 Next, we are going to show the records. To do this we have to retrieve the values of each property of the record. We need to use the method **_get_** for this. For example, if we cant to create a list of the values of a single record we can do it in the following way
 
-```
+```kotlin
  val properties = T::class.memberProperties
  val values = properties.map { it.get(instance).toString() }
 ```
 
 Lets put this code into a function and we add sorting and filter
 
-```
+```kotlin
 inline fun <reified T : Any> values(instance: T): List<String> {
     val properties = T::class.memberProperties
 
@@ -153,7 +153,7 @@ inline fun <reified T : Any> values(instance: T): List<String> {
 
 And we create two composables. One for creating each cell and another to create the row containing these cells
 
-```
+```kotlin
 @Composable
 inline fun <reified T : Any> Cells(instance: T) {
     val values = values(instance)
@@ -183,7 +183,7 @@ inline fun <reified T : Any> RowCells(items: List<T>) {
 
 Lets add a TextField for the search and put header and rows together.
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 inline fun <reified T : Any> SearchableTable(items: List<T>) {
@@ -208,7 +208,7 @@ inline fun <reified T : Any> SearchableTable(items: List<T>) {
 
 To filter the records we are going to use next two functions. If any of the record values match the search text, then we keep the record.
 
-```
+```kotlin
 inline fun <reified T : Any> containsText(text: String, instance: T): Boolean {
     val values = values(instance)
     val lowerText = text.lowercase()
@@ -231,7 +231,7 @@ inline fun <reified T : Any> filterItems(textSearch: String, items: List<T>): Li
 
 And we use it in the composable
 
-```
+```kotlin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 inline fun <reified T : Any> SearchableTable(items: List<T>) {
@@ -260,7 +260,7 @@ inline fun <reified T : Any> SearchableTable(items: List<T>) {
 
 Lets wrap what we have done into a dialog and make some visual improvements
 
-```
+```kotlin
 @Composable
 inline fun <reified T : Any> SearchableTableDialog(
     title: String,
@@ -312,7 +312,7 @@ inline fun <reified T : Any> SearchableTableDialog(
 
 Finally we add the events for selecting the record. This is the final code
 
-```
+```kotlin
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
