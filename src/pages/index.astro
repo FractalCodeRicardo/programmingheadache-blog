@@ -1,21 +1,81 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import PostCard from "../components/PostCard.astro";
+
+function getFullImagePath(itemCollection: any) {
+  var imports = itemCollection.assetImports;
+
+  if (!imports) return "blog-placeholder-1.jpg";
+
+  if (imports.length <= 0) {
+    return "blog-placeholder-1.jpg";
+  }
+
+  var path = "src/content/" + itemCollection.id + "/" + imports[0];
+
+  return path;
+}
+
+async function getPosts() {
+  var collection = await getCollection("blog");
+  collection = collection.sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+
+  var posts = collection.map((i) => {
+    return {
+      title: i.data.title,
+      date: i.data.date,
+      image: getFullImagePath(i),
+    };
+  });
+
+  return posts;
+}
+
+const posts = await getPosts();
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-                  <p>Be right back! Our code went on a coffee break</p>
-                <main style="flex: 1; display: flex; justify-content: center; align-items: center;">
-                  <img src="./wellbeback.png" alt="We'll be back soon" style="max-width: 100%; height: auto;" />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+
+    <main
+      style="
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    "
+    >
+      <h1
+        style="
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 2rem;
+    "
+      >
+        Latest Posts
+      </h1>
+
+      {
+        posts.map((post) => {
+          console.log(post.image);
+          return <PostCard post={post} />;
+        })
+      }
     </main>
-		<Footer />
-	</body>
+
+    <Footer />
+  </body>
 </html>
