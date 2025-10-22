@@ -3,11 +3,12 @@ title: "Kotlin collection operations that you will use every day"
 date: 2024-01-04
 categories: 
   - "kotlin"
+image: "/images/kotlin-image.png"
 ---
 
 In you daily programming you will need filter, order, grouping, etc your collections. Here is a brief review of what you can do with the following collection-operations in kotlin:
 
-![](images/image.png)
+![](/images/kotlin-image.png)
 
 - **Foreach**
 

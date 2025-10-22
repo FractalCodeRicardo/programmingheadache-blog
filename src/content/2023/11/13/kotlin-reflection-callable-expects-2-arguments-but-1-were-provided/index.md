@@ -3,6 +3,7 @@ title: "Kotlin - Reflection - Callable expects 2 arguments, but 1 were provided.
 date: 2023-11-13
 categories: 
   - "kotlin"
+image: "/images/image-5.png"
 ---
 
 When using reflection in Kotlin, this problem arises because you try to call a function without sendind the instance class as parameter.
@@ -39,4 +40,4 @@ So, you have to send an instance of the class first.
 ImAClass::function.call(ImAClass(), 1)
 ```
 
-![](images/image-5.png)
+![](/images/image-5.png)

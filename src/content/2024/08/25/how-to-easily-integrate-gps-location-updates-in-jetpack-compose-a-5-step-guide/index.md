@@ -7,11 +7,12 @@ tags:
   - "gps"
   - "jetpack-compose"
   - "locations"
+image: "/images/gps-image-7-1024x1024.png"
 ---
 
 Integrating localization updates in Jetpack Compose is very easy. Follow these 5 steps to do it.
 
-![](images/image-7-1024x1024.png)
+![](/images/gps-image-7-1024x1024.png)
 
 **1\. Setup your project**
 
@@ -217,7 +218,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     }
 ```
 
-![](images/image-8.png)
+![](/images/gps-image-8.png)
 
 This is the whole code
 

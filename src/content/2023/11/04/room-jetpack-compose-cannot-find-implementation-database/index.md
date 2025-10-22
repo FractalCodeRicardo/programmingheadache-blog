@@ -4,6 +4,7 @@ date: 2023-11-04
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/room-image-1.png"
 ---
 
 Nowadays Room is one of the preferred libraries for handling SQLite in Android. One common exception is the following.
@@ -25,14 +26,14 @@ And the error is caused because you need to add a depencency to resolve the room
 
 In the outter build.gradle.kts add
 
-![](images/image-1.png)
+![](/images/room-image-1.png)
 
 In the inner build.gradle.kts add
 
-![](images/image-2.png)
+![](/images/room-image-2.png)
 
 Sync your project and then add this dependency
 
-![](images/image-3.png)
+![](/images/room-image-3.png)
 
 This will fix the issue

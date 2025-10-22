@@ -3,6 +3,7 @@ title: "Jetpack Compose - DatePicker Easy to Implement"
 date: 2023-11-28
 categories: 
   - "jetpack-compose"
+image: "/images/Peek-2023-11-27-20-57.gif"
 ---
 
 There are some options for handling dates in Jetpack Compose. Recently, I found a very straightforward library for this porpuse.
@@ -53,7 +54,7 @@ fun CustomDatePicker() {
 
 This is how the example looks like
 
-![](images/Peek-2023-11-27-20-57.gif)
+![](/images/Peek-2023-11-27-20-57.gif)
 
 Now, lets put a TextField to show the date
 
@@ -64,7 +65,7 @@ Now, lets put a TextField to show the date
     )
 ```
 
-![](images/Peek-2023-11-27-20-57-2.gif)
+![](/images/Peek-2023-11-27-20-57-2.gif)
 
 Now, we need to add functionality to open the dialog. We want that the dialog opens when the TextField is clicked. So, we need a variable that handles the open state.
 
@@ -123,7 +124,7 @@ Finally, we display the dialog only when open state is true
     }
 ```
 
-![](images/Peek-2023-11-27-21-43.gif)
+![](/images/Peek-2023-11-27-21-43.gif)
 
 Additionally, we are going to add the parameters to change the value from outside the composable
 

@@ -4,11 +4,12 @@ date: 2024-10-26
 categories: 
   - "c"
   - "entityframework"
+image: "/images/efficient-image-5-1024x1024.png"
 ---
 
 In the C# ecosystem, there are several ways to join data from tables in a database, one of the most popular approaches is using Code First with Entity Framework.
 
-![](images/image-5-1024x1024.png)
+![](/images/efficient-image-5-1024x1024.png)
 
 Joining data between tables is a trivial task in most applications. The problem arises when the database starts to grow, and if the correct approach is not followed, it can lead to bottlenecks in the application, unnecessary resource consumption, and a poor user experience.
 
@@ -18,7 +19,7 @@ This article measures the execution time of some of the most common ways to perf
 
 Consider this typical table structure in a sales system, where we have a Product table and a Category table.
 
-![](images/image-2.png)
+![](/images/efficient-image-2.png)
 
 Using Code First - EF we have something like this
 
@@ -178,13 +179,13 @@ var query = context.Database
 
 To measure the performance of each approach, some data is inserted into the products and categories tables. Then, the data is gradually increased.
 
-![](images/image-3-1024x463.png)
+![](/images/efficient-image-3-1024x463.png)
 
 From this graph, we can see that the Manual approach is the slowest, and SQL is the fastest. It is clear that manual approach must be discarded when we have big data.
 
 Lets see the other approaches in more detail
 
-![](images/image-4-1024x463.png)
+![](/images/efficient-image-4-1024x463.png)
 
 The SQL approach is the best option when performance is a priority. However, in many cases, we don't want SQL strings in our code, so the next best options are the All-in-One or Include approaches. The Include approach is easy to use and offers good performance. Manual Caching and All-in-One are also good options, though they have slower performance.
 

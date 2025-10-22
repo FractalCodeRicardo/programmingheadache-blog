@@ -5,6 +5,7 @@ categories:
   - "chatgpt"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/image-11.png"
 ---
 
 We want our composable screens cleaner and one way to achieve it is extracting our composable components in smaller functions. Consider the following example. I have a screen with three fields and I want to make it more readable.
@@ -116,7 +117,7 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
 So, I asked ChatGPT to put each field in separate functions  
   
 
-![](images/image-11.png)
+![](/images/image-11.png)
 
 Now the main screen is cleaner
 
@@ -163,11 +164,11 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
 
 Of course, ChatGPT didn't do the whole job, we have to do our job too. In this case, ChatGPT leaves some errors like the following  
 
-![](images/image-13.png)
+![](/images/image-13.png)
 
 The fix is straightforward
 
-![](images/image-14.png)
+![](/images/image-14.png)
 
 Now our fields section is very clean
 

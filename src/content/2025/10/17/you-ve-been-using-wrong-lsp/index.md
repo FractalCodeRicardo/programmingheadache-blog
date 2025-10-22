@@ -1,6 +1,7 @@
 ---
 title: "You’ve Been Using the WRONG LSP for C# in Neovim"
 date: 2025-10-17
+image: "/images/samurai.jpg"
 categories: 
   - "net"
   - "programming"
@@ -15,7 +16,7 @@ tags:
 
 More and more .NET developers are starting to notice the advantages of using Neovim as their main code editor. But let’s be honest most of us don’t want to waste time configuring endless settings. We want the things and we wanted now. I mean, we just want a great editor, an enjoyable coding experience, and maximum efficiency.
 
-![](images/samurai.jpg)
+![](/images/samurai.jpg)
 
 That’s why most developers choose the most straightforward way to set up their LSP inside Neovim: Omnisharp LSP.
 

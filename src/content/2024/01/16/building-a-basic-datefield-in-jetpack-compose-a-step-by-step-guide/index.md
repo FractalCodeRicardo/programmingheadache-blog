@@ -4,6 +4,7 @@ date: 2024-01-16
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/building-image-4.png"
 ---
 
 We want a basic composable that allows the user to capture: year, month and day of a date.
@@ -82,7 +83,7 @@ fun CustomDateField() {
 
 Looks like this
 
-![](images/image-4.png)
+![](/images/building-image-4.png)
 
 Now lets implement de events when the date changes. We are going to use a function that returns null when the date is not valid, otherwise it will the return the date.
 
@@ -212,7 +213,7 @@ OutlinedTextField(
 
 We do the same for month and day fields. It looks like this:
 
-![](images/Peek-2024-01-15-21-34.gif)
+![](/images/Peek-2024-01-15-21-34.gif)
 
 Finally we are going to change the colors when the user type a wrong date. We add a variable state for the error.
 
@@ -241,7 +242,7 @@ We change the error value when in the onValueChange event
   )
 ```
 
-![](images/Peek-2024-01-15-21-45.gif)
+![](/images/Peek-2024-01-15-21-45.gif)
 
 This is the final code
 

@@ -4,6 +4,7 @@ date: 2023-12-12
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2023-12-11-15-55.gif"
 ---
 
 Jetpack compose text fields are highly customizable. Here are 10 things that you can do to give your fields a better look.
@@ -42,7 +43,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55.gif)
+![](/images/Peek-2023-12-11-15-55.gif)
 
 ## 2\. Add labels
 
@@ -76,7 +77,7 @@ var text by remember { mutableStateOf("") }
   }
 ```
 
-![](images/Peek-2023-12-11-15-55-2.gif)
+![](/images/Peek-2023-12-11-15-55-2.gif)
 
 ## 3\. Dowload more Icons and use them
 
@@ -95,7 +96,7 @@ You can have a preview of the icons in the page:
   
 [https://petershaggynoble.github.io/MDI-Sandbox/extended/](https://petershaggynoble.github.io/MDI-Sandbox/extended/)
 
-![](images/image-9-1024x663.png)
+![](/images/10-tips-image-9-1024x663.png)
 
 ## 4\. Use trailing icon
 
@@ -139,7 +140,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55-3.gif)
+![](/images/Peek-2023-12-11-15-55-3.gif)
 
 ## 5\. Use leading icon
 
@@ -193,7 +194,7 @@ var text by remember { mutableStateOf("") }
   }
 ```
 
-![](images/Peek-2023-12-11-15-55-4.gif)
+![](/images/Peek-2023-12-11-15-55-4.gif)
 
 ## 6\. Customize default colors
 
@@ -258,7 +259,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55-5.gif)
+![](/images/Peek-2023-12-11-15-55-5.gif)
 
 ## 7\. Add a visual transformation
 
@@ -351,7 +352,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55-6.gif)
+![](/images/Peek-2023-12-11-15-55-6.gif)
 
 ## 8\. Use shape properties
 
@@ -428,7 +429,7 @@ Column(modifier = Modifier.padding(50.dp)) {
   }
 ```
 
-![](images/Peek-2023-12-11-15-55-7.gif)
+![](/images/Peek-2023-12-11-15-55-7.gif)
 
 ## 9\. Use supporting text
 
@@ -508,7 +509,7 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55-8.gif)
+![](/images/Peek-2023-12-11-15-55-8.gif)
 
 ## 10\. Use placeholders
 
@@ -590,4 +591,4 @@ Column(modifier = Modifier.padding(50.dp)) {
 }
 ```
 
-![](images/Peek-2023-12-11-15-55-9.gif)
+![](/images/Peek-2023-12-11-15-55-9.gif)

@@ -10,21 +10,22 @@ tags:
   - "kotlin"
   - "pullup"
   - "refactoring"
+image: "/images/image-49.png"
 ---
 
 The pull-up refactoring involves finding common code and moving it to a parent class so that child classes can share it. This example is given in the book _Refactoring: Improving the Design of Existing Code_ by Martin Fowler.
 
-![](images/image-49.png)
+![](/images/image-49.png)
 
 Even though **composables are not classes**, the same principles can be applied to Jetpack Compose. We can think in putting common code in a **parent composable function instead of a class**.
 
 Consider the following example with a Client and Order Screens
 
-![](images/image-46.png)
+![](/images/image-46.png)
 
 Order
 
-![](images/image-47.png)
+![](/images/image-47.png)
 
 Client
 

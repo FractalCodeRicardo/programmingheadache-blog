@@ -8,9 +8,10 @@ tags:
   - "jetpack-compose"
   - "kotlin"
   - "navigation"
+image: "/images/Peek-2024-01-12-13-37.gif"
 ---
 
-![](images/Peek-2024-01-12-13-37.gif)
+![](/images/Peek-2024-01-12-13-37.gif)
 
 For small app's sometimes is better to write a custom navigation instead of using the oficial navigation library.
 
@@ -90,7 +91,7 @@ fun NavigationDrawer() {
 
 Looks like this
 
-![](images/image-1.png)
+![](/images/effort-image-1.png)
 
 **Scaffold**
 
@@ -189,7 +190,7 @@ fun NavigationDrawer(scaffoldContent: () -> Unit) {
 
 It looks like this until now
 
-![](images/Peek-2024-01-12-09-58.gif)
+![](/images/Peek-2024-01-12-09-58.gif)
 
 **Keep track of current and previous screen**
 
@@ -296,7 +297,7 @@ fun BasicCustomNavigation() {
 }
 ```
 
-![](images/Peek-2024-01-12-10-44.gif)
+![](/images/Peek-2024-01-12-10-44.gif)
 
 Now lets add the functionality to go to previous screen. First we are going to create a top bar:
 
@@ -351,7 +352,7 @@ fun TopBar(
 }
 ```
 
-![](images/image-3.png)
+![](/images/effort-image-3.png)
 
 Now lets add the top bar and implement the open menu and go back events
 
@@ -420,11 +421,11 @@ fun BasicCustomNavigation() {
 }
 ```
 
-![](images/Peek-2024-01-12-13-00.gif)
+![](/images/Peek-2024-01-12-13-00.gif)
 
 I added some colors and this is the result
 
-![](images/Peek-2024-01-12-13-37.gif)
+![](/images/Peek-2024-01-12-13-37.gif)
 
 This is the final code
 

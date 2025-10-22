@@ -6,18 +6,12 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import PostCard from "../components/PostCard.astro";
 
-function getFullImagePath(itemCollection: any) {
-  var imports = itemCollection.assetImports;
+function getImagePath(itemCollection: any) {
+  var image = itemCollection.data.image;
 
-  if (!imports) return "blog-placeholder-1.jpg";
+  if (!image) return "/images/default.jpg";
 
-  if (imports.length <= 0) {
-    return "blog-placeholder-1.jpg";
-  }
-
-  var path = "src/content/" + itemCollection.id + "/" + imports[0];
-
-  return path;
+  return image;
 }
 
 async function getPosts() {
@@ -30,7 +24,7 @@ async function getPosts() {
     return {
       title: i.data.title,
       date: i.data.date,
-      image: getFullImagePath(i),
+      image: getImagePath(i),
     };
   });
 
@@ -70,7 +64,6 @@ const posts = await getPosts();
 
       {
         posts.map((post) => {
-          console.log(post.image);
           return <PostCard post={post} />;
         })
       }

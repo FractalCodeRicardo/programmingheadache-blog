@@ -13,9 +13,10 @@ tags:
   - "kotlin"
   - "martin-fowler"
   - "refactoring"
+image: "/images/cleaner-image-10.png"
 ---
 
-![](images/image-10.png)
+![](/images/cleaner-image-10.png)
 
 In my opinion, one of the best refactors is _extract function._ Martin Fowler describe it in his book _Refactoring Improving the Design of Existing Code_
 
@@ -131,7 +132,7 @@ It would be great if we extract each field into a Composable. This has these ben
 
 So, lets ask Bard to extract those composables
 
-![](images/image-11.png)
+![](/images/image-11.png)
 
 Here is the code that Bard gives me. I had to fix some errors:
 
@@ -230,7 +231,7 @@ fun NationalityField(
 
 Now I asked for the original code using this new functions
 
-![](images/image-12.png)
+![](/images/image-12.png)
 
 ```kotlin
 @Composable
@@ -316,4 +317,4 @@ fun PersonalInfoScreenPreview() {
 
 This is how it looks
 
-![](images/Peek-2023-12-14-11-34.gif)
+![](/images/Peek-2023-12-14-11-34.gif)

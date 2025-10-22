@@ -3,9 +3,10 @@ title: "Data Management with Java Streams: Comprehensive Examples for Beginners 
 date: 2024-01-19
 categories: 
   - "java"
+image: "/images/data-image-5.png"
 ---
 
-![](images/image-5.png)
+![](/images/data-image-5.png)
 
 Streams are one of the best ways to handle data in Java nowadays. Streams provide a versatile and efficient mechanism for data management. In this article, we explore practical examples of how to use them.
 

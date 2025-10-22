@@ -3,11 +3,12 @@ title: "Unlocking LINQ: Basic Katas for C# Programmers"
 date: 2024-08-04
 categories: 
   - "c"
+image: "/images/unlocking-image-2-1024x1024.png"
 ---
 
 Do you want to test your skills as a C# programmer? Are you a beginner eager to learn more about programming problems and solutions? Or perhaps you're looking for a challenging way to sharpen your LINQ knowledge? Here is a set of C# LINQ katas designed to help you master the basics of LINQ and improve your programming skills. These katas will guide you through fundamental concepts and provide practical problems to solve, making them perfect for honing your abilities and deepening your understanding of LINQ in C#.
 
-![](images/image-2-1024x1024.png)
+![](/images/unlocking-image-2-1024x1024.png)
 
 1. Just clone this repository
 
@@ -49,7 +50,7 @@ public static IEnumerable<Animal> Get()
 
 3\. Implement the methods in the Katas class
 
-![](images/image.png)
+![](/images/image.png)
 
 4\. Check you answers running
 
@@ -58,7 +59,7 @@ dotnet build
 dotnet test
 ```
 
-![](images/image-1-1024x84.png)
+![](/images/unlocking-image-1-1024x84.png)
 
 ## Katas description
 

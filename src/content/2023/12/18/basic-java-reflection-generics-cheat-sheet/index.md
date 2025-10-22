@@ -3,9 +3,10 @@ title: "Basic Java Reflection / Generics cheat sheet"
 date: 2023-12-18
 categories: 
   - "java"
+image: "/images/image-42.png"
 ---
 
-![](images/image-42.png)
+![](/images/image-42.png)
 
 Reflection is awesome it lets you handle class fields and methods dynamically, when using it, some of the common tasks that you will need are these:
 

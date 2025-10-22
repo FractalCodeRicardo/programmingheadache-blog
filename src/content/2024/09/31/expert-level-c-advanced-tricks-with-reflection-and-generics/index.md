@@ -8,11 +8,12 @@ tags:
   - "c"
   - "programming"
   - "tricks"
+image: "/images/expert-image-1024x1024.png"
 ---
 
 An advanced software developer uses generics and reflection to save themselves the work of writing hundreds of lines of code. There are a series of tricks that have been used for years, but unfortunately, they are not widely known. Here are some of those tricks.
 
-![](images/image-1024x1024.png)
+![](/images/expert-image-1024x1024.png)
 
 ## 1\. Use lambda expression to get property names
 

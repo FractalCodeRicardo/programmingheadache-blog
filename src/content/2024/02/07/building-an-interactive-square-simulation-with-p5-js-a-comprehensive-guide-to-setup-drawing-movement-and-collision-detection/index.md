@@ -3,9 +3,10 @@ title: "Building an Interactive Square Simulation with p5.js: A Comprehensive Gu
 date: 2024-02-07
 categories: 
   - "p5"
+image: "/images/Peek-2024-02-07-13-03.gif"
 ---
 
-![](images/Peek-2024-02-07-13-03.gif)
+![](/images/Peek-2024-02-07-13-03.gif)
 
 Step into the exciting world of interactive web simulations as we delve into the creation of a dynamic square simulation using the powerful p5.js library. In this comprehensive guide, we'll walk you through each crucial step to bring your simulation to life, from the initial setup to drawing the square, defining boundaries, enabling movement, and implementing collision detection.
 
@@ -56,7 +57,7 @@ function draw() {
 
 Open the html file in a web browser, you will get this:  
 
-![This image has an empty alt attribute; its file name is image.png](images/image-1.png)
+![This image has an empty alt attribute; its file name is image.png](/images/building-an-image-1.png)
 
 ## 2\. Draw the squares
 
@@ -125,7 +126,7 @@ function draw() {
 
 Looks like this until now:
 
-![](images/image-2.png)
+![](/images/image-2.png)
 
 ## 3\. Move the squares (agents)
 
@@ -225,7 +226,7 @@ function draw() {
 }
 ```
 
-![](images/Peek-2024-02-07-13-03-1.gif)
+![](/images/Peek-2024-02-07-13-03-1.gif)
 
 ## 4\. Walls
 
@@ -281,7 +282,7 @@ function drawWall(wall, color) {
 
 It looks like this
 
-![](images/Peek-2024-02-07-13-03-2.gif)
+![](/images/Peek-2024-02-07-13-03-2.gif)
 
 **5\. Detect collisions**
 

@@ -3,9 +3,10 @@ title: "Fuel Your Coding Passion: Discover 5 YouTube Programmers Who'll Ignite Y
 date: 2024-03-25
 categories: 
   - "programming"
+image: "/images/fuel-image-10.png"
 ---
 
-![](images/image-10.png)
+![](/images/fuel-image-10.png)
 
 Programming is difficult. It's not just about having the technical and mental experience to solve problems through code, it also involves a certain psychological capacity to keep yourself motivated during long coding sessions.
 

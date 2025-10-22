@@ -3,9 +3,10 @@ title: "Test your SQL skills: SQL Katas to keep you in shape!"
 date: 2024-08-18
 categories: 
   - "sql"
+image: "/images/test-your-image-5-1024x1024.png"
 ---
 
-![](images/image-5-1024x1024.png)
+![](/images/test-your-image-5-1024x1024.png)
 
 So you thought you were going to use MongoDB or DynamoDB forever? Face it! Sooner or later, you'll need to learn SQL. Mastering the basics of SQL is essential for any programmer. Whether you're working with relational databases or just want to enhance your data manipulation skills, SQL is a crucial tool in your toolkit.
 
@@ -78,7 +79,7 @@ sqlite3 sales.db ".read sales.sql"
 
 5\. Every sql file has a problem that you need to solve  
 
-![](images/image-3-1024x464.png)
+![](/images/test-your-image-3-1024x464.png)
 
 You can check you answers running
 
@@ -90,7 +91,7 @@ sh test.sh
 .\test.ps1
 ```
 
-![](images/image-4.png)
+![](/images/test-your-image-4.png)
 
 If you are stuck, you can see the answers in the "answers" folder.
 

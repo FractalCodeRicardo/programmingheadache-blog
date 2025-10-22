@@ -5,9 +5,10 @@ categories:
   - "jetpack-compose"
   - "kotlin"
   - "refactoring"
+image: "/images/think-image-4.png"
 ---
 
-![](images/image-4.png)
+![](/images/think-image-4.png)
 
 The use of generic programming in Jetpack Compose promotes the creation of highly reusable designs and, furthermore, avoids one of the less desired code smells: duplicate code.
 
@@ -159,11 +160,11 @@ fun ListSodas(
 
 The lists look like this:
 
-![](images/image.png)
+![](/images/image.png)
 
-![](images/image-1.png)
+![](/images/think-image-1.png)
 
-![](images/image-2.png)
+![](/images/think-image-2.png)
 
 As you can see, the lists are very similar; they share the same structure, title, and content details. Therefore, we can remove a lot of duplicate code by creating a generic list.
 

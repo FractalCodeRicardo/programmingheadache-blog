@@ -4,6 +4,7 @@ date: 2023-11-09
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/datepicker.gif"
 ---
 
 Material3 has two components that are easy to use when we need to use dates.
@@ -25,7 +26,7 @@ fun CustomDatePicker() {
 }
 ```
 
-![](images/datepicker.gif)
+![](/images/datepicker.gif)
 
 ## DatePickerDialog
 
@@ -44,7 +45,7 @@ fun CustomDatePicker() {
 }
 ```
 
-![](images/datepicker2.gif)
+![](/images/datepicker2.gif)
 
 Using both components we can build a a custom datepicker acording our requeriment. In my case, I just needed a TextField that shows the Date and that shows the Dialog when it is clicked.
 
@@ -66,7 +67,7 @@ val date = remember { mutableStateOf(LocalDate.now())}
     }
 ```
 
-![](images/image-4.png)
+![](/images/image-4.png)
 
 2\. Next, we add a new composable with the dialog
 
@@ -138,7 +139,7 @@ fun CustomDatePicker() {
 }
 ```
 
-![](images/datepicker3.gif)
+![](/images/datepicker3.gif)
 
 4\. Finally, we set the value in the TextField
 

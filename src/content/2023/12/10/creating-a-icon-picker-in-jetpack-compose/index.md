@@ -9,9 +9,10 @@ tags:
   - "icon-picker"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2023-12-10-12-53.gif"
 ---
 
-![](images/Peek-2023-12-10-12-53.gif)
+![](/images/Peek-2023-12-10-12-53.gif)
 
 It would be great to let the users choose the icons that they want, so lets build a icon picker with the following functionalities:
 
@@ -53,7 +54,7 @@ fun IconList() {
 }
 ```
 
-![](images/image-8.png)
+![](/images/creating-image-8.png)
 
 Now we want a TextField that shows the icons when typing. Lets add the TextField and the code that shows the list on typing
 
@@ -93,7 +94,7 @@ fun IconList(
 }
 ```
 
-![](images/Peek-2023-12-09-18-08.gif)
+![](/images/Peek-2023-12-09-18-08.gif)
 
 Now lets filter the results
 
@@ -126,7 +127,7 @@ LazyColumn() {
       }
 ```
 
-![](images/Peek-2023-12-09-18-18.gif)
+![](/images/Peek-2023-12-09-18-18.gif)
 
 I added some code to get a better look:
 
@@ -281,4 +282,4 @@ fun IconPickerPreview() {
 }
 ```
 
-![](images/Peek-2023-12-10-12-53.gif)
+![](/images/Peek-2023-12-10-12-53.gif)

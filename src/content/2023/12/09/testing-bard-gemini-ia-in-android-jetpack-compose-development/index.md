@@ -5,6 +5,7 @@ categories:
   - "bard"
   - "gemini"
   - "jetpack-compose"
+image: "/images/testing-image.png"
 ---
 
 Finally google is competing in the IA world and Gemini IA has been released. You can testing it using Bard:
@@ -17,7 +18,7 @@ Let's see how can we improve our Jetpack programming using it.
 
 Prompt:
 
-![](images/image.png)
+![](/images/testing-image.png)
 
 Output:
 
@@ -130,15 +131,15 @@ fun UserScreen() {
 
 - It gave me some references that didn't exists
 
-![](images/image-1.png)
+![](/images/testing-image-1.png)
 
 - Something great is that it give you the github references!!
 
-![](images/image-2.png)
+![](/images/testing-image-2.png)
 
 I had to make some changes and this is how it looks like
 
-![](images/image-3.png)
+![](/images/testing-image-3.png)
 
 ## **Test 2. Simple field validation**
 
@@ -148,7 +149,7 @@ Im going to ask Gemini for two simple functions:
 
 - A function that validates a phone number
 
-![](images/image-4.png)
+![](/images/testing-image-4.png)
 
 This is the code
 
@@ -168,7 +169,7 @@ fun isValidPhoneNumber(phoneNumber: String): Boolean {
 
 To test the code it gave me before I'm going to ask for the unit tests of the two functions
 
-![](images/image-5.png)
+![](/images/testing-image-5.png)
 
 This is the code
 
@@ -227,7 +228,7 @@ fun testInvalidPhoneNumber() {
 
 I ran the test and one of them failed
 
-![](images/image-6.png)
+![](/images/testing-image-6.png)
 
 The regex to validate the phone number needed to be fixed and one of the unit test had an error too.
 
@@ -239,7 +240,7 @@ In this part most of the code were good but you have to test it well. The fixes 
 
 Let's see if Gemini can code the snake game in jetpack!
 
-![](images/image-7.png)
+![](/images/testing-image-7.png)
 
 ```kotlin
 @Composable
@@ -401,7 +402,7 @@ private fun generateFoodPosition() {
 }
 ```
 
-![](images/Peek-2023-12-09-11-18.gif)
+![](/images/Peek-2023-12-09-11-18.gif)
 
   
 **Final thoughts**

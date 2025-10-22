@@ -4,6 +4,7 @@ date: 2023-11-20
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/suspendfunctions.gif"
 ---
 
 When using suspend functions inside composables a common error is the following:
@@ -72,4 +73,4 @@ fun Screen() {
 }
 ```
 
-![](images/suspendfunctions.gif)
+![](/images/suspendfunctions.gif)

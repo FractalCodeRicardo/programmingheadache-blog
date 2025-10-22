@@ -3,6 +3,7 @@ title: "Creating a Jetpack Compose Color Picker Easily"
 date: 2023-11-30
 categories: 
   - "jetpack-compose"
+image: "/images/Peek-2023-11-30-09-37.gif"
 ---
 
 A common functionality in a mobile app is allowing users to choose a color. Sometimes, you need a composable according to these needs
@@ -44,7 +45,7 @@ fun ColorPicker() {
 
 This is how it looks like
 
-![](images/Peek-2023-11-30-09-37.gif)
+![](/images/Peek-2023-11-30-09-37.gif)
 
 Next, we add a textfield for the description
 
@@ -109,7 +110,7 @@ if (open.value) {
     }
 ```
 
-![](images/Peek-2023-11-30-09-37-1.gif)
+![](/images/Peek-2023-11-30-09-37-1.gif)
 
 Finally we add the value and onChange parameters
 

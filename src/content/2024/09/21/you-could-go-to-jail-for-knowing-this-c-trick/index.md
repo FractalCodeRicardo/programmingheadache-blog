@@ -8,11 +8,12 @@ tags:
   - "hacking"
   - "private-access-modifier"
   - "secure-code"
+image: "/images/you-could-image-1-1024x1024.png"
 ---
 
 A common mistake among less experienced programmers (and even experienced ones) is to believe that the _private_ access modifier is enough to keep our code secure and prevent it from being accessed improperly.
 
-![](images/image-1-1024x1024.png)
+![](/images/you-could-image-1-1024x1024.png)
 
 **This is a significant mistake!**
 

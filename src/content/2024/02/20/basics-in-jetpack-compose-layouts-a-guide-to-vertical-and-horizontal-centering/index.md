@@ -7,9 +7,10 @@ categories:
 tags: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/basics-image-4.png"
 ---
 
-![](images/image-4.png)
+![](/images/basics-image-4.png)
 
 Centering with respect to the screen can be tricky in Jetpack Compose. You need to use the right layout (Column or Row) to achieve it. You have to adjust the size of the parent container to fit the screen as well. Once you follow these five simple steps, you will not have any confusion about this basic layout configuration.
 
@@ -88,7 +89,7 @@ fun CenterVerticallyScreen() {
 
 It looks like this:
 
-![](images/image-3.png)
+![](/images/basics-image-3.png)
 
 ## Horizontally
 
@@ -147,7 +148,7 @@ fun CenterHorizontallyScreen() {
 }
 ```
 
-![](images/image-5.png)
+![](/images/basics-image-5.png)
 
 - Github: [https://github.com/FractalCodeRicardo](https://github.com/FractalCodeRicardo)
 

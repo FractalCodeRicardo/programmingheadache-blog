@@ -4,9 +4,10 @@ date: 2024-02-13
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2024-02-13-11-38-1.gif"
 ---
 
-![](images/Peek-2024-02-13-11-38-1.gif)
+![](/images/Peek-2024-02-13-11-38-1.gif)
 
 Crafting a loading indicator for your screens is a straightforward process. Achieve this in just four simple steps, requiring only a few minutes of your time.
 
@@ -82,11 +83,11 @@ fun SimpleLoadingPreview() {
 }
 ```
 
-![](images/Peek-2024-02-13-11-38.gif)
+![](/images/Peek-2024-02-13-11-38.gif)
 
 Lets improve how it looks
 
-![](images/Peek-2024-02-13-11-38-1.gif)
+![](/images/Peek-2024-02-13-11-38-1.gif)
 
 This is the whole code
 

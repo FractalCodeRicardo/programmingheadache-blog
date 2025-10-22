@@ -9,13 +9,14 @@ tags:
   - "icon-picker"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2024-03-15-11-19.gif"
 ---
 
 The material extended library has tons of icons that can make our apps look better. Letting users choose which icons they want to use would be really cool.
 
 We're looking for a picker similar to the gif below
 
-![](images/Peek-2024-03-15-11-19.gif)
+![](/images/Peek-2024-03-15-11-19.gif)
 
 First you need to add the extended library in the build.grade.kt file (replace the version if needed)
 
@@ -150,7 +151,7 @@ private fun SearchTextField(
 
 This is how it looks
 
-![](images/image-6.png)
+![](/images/building-an-building-an-icon-image-6.png)
 
 ## Icons List
 
@@ -173,7 +174,7 @@ As we can see in the image below. Each Icon has three elements:
 
 - The check if it is selected
 
-![](images/image-7.png)
+![](/images/building-an-building-an-icon-image-7.png)
 
 The structure of the composable is the following
 
@@ -337,7 +338,7 @@ private fun IconListRow(
 
 This is how it appears
 
-![](images/image-8.png)
+![](/images/building-an-building-an-icon-image-8.png)
 
 ## Buttons
 
@@ -373,7 +374,7 @@ We require a view model capable of the following tasks:
 
 To get the whole list of icons we are going to use a special asset file (you can see it in the assets section of the project, the github repository is in the end of the article)
 
-![](images/image-9.png)
+![](/images/building-an-building-an-icon-image-9.png)
 
   
 We need to convert the icon's name into an ImageVector. This can be achieved using the following snippet.
@@ -470,7 +471,7 @@ override fun onClickIcon(icon: IconItem) {
 
 This is the final result
 
-![](images/Peek-2024-03-15-11-19-1.gif)
+![](/images/Peek-2024-03-15-11-19-1.gif)
 
 ## Whole code of view model
 

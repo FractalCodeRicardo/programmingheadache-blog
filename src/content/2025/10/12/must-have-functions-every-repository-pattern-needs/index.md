@@ -12,11 +12,12 @@ tags:
   - "entity-framework-2"
   - "refactoring-tips"
   - "repository-pattern"
+image: "/images/must-imagen-576x1024.png"
 ---
 
 I’ve implemented the **Repository Pattern** in many projects since the early versions of **Entity Framework**, and I’ve noticed that introducing simple functions early can save hundreds — if not thousands — of lines of code in large applications.
 
-![](images/imagen-576x1024.png)
+![](/images/must-imagen-576x1024.png)
 
 In this article, I’ll show you a few **reusable Entity Framework functions** that you can use across your data access layer to make your code cleaner and more maintainable:
 

@@ -8,11 +8,12 @@ tags:
   - "martin-fowler"
   - "refactoring"
   - "robert-martin"
+image: "/images/why-image-6-1024x1024.png"
 ---
 
 Refactoring is great; code that is a mess can gradually be transformed into code that is understandable at first glance.
 
-![](images/image-6-1024x1024.png)
+![](/images/why-image-6-1024x1024.png)
 
 _Refactoring is a controlled technique for improving the design of an existing code base. Its essence is applying a series of small behavior-preserving transformations, each of which "too small to be worth doing". However the cumulative effect of each of these transformations is quite significant. By doing them in small steps you reduce the risk of introducing errors. You also avoid having the system broken while you are carrying out the restructuring - which allows you to gradually refactor a system over an extended period of time._
 

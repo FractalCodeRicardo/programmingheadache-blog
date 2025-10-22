@@ -5,6 +5,7 @@ categories:
   - "chatgpt"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/image-6.png"
 ---
 
 I want a profile screen with three fields:
@@ -27,7 +28,7 @@ I want the full functionality, so I am going to ask for these parts of the archi
 
 I started with a simple pompt like this
 
-![](images/image-6.png)
+![](/images/image-6.png)
 
 This is the code that it gave me
 
@@ -129,12 +130,12 @@ fun ProfileScreenPreview() {
 
 I had to fix the imports of the icons, one of the icon didn't exists. Fixing that this is how to looks like:
 
-![](images/image-7.png)
+![](/images/image-7.png)
 
   
 Now I want the the user select the profile picture.
 
-![](images/image-8.png)
+![](/images/image-8.png)
 
 It changed the profile image field and add a functión to select an image. This is the new function:
 
@@ -204,7 +205,7 @@ if (userProfile.profileImageUri != null) {
 }
 ```
 
-![](images/ProfileScreenPickImage.gif)
+![](/images/ProfileScreenPickImage.gif)
 
 It was necesary to add permissions to read the image, so I added a line when the image is picked
 
@@ -222,7 +223,7 @@ uri?.let {
 
 For the ViewModel, this was my prompt
 
-![](images/image-9.png)
+![](/images/image-9.png)
 
 And ChatGPT gave me this code
 
@@ -302,7 +303,7 @@ class ProfileViewModel : ViewModel() {
 
 First I'm going to create the data model and and data access objects
 
-![](images/image-10.png)
+![](/images/image-10.png)
 
 ChatGPT did a great job! I didn't have to ask for the Dao neither for the database class. It gave me this code
 

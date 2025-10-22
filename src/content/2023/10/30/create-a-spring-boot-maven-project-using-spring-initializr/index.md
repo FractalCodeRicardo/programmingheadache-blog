@@ -3,6 +3,7 @@ title: "Create a Spring Boot Maven project using Spring Initializr"
 date: 2023-10-30
 categories: 
   - "spring-boot"
+image: "/images/image5.jpg"
 ---
 
 Spring Boot is one of the best frameworks for building web applications. It has a great web page for creating a boilerplate to start a project.
@@ -15,7 +16,7 @@ The first thing you need to do is open this web page on your browser:
 
 [https://start.spring.io/](https://start.spring.io/)
 
-![](images/image5.jpg)
+![](/images/image5.jpg)
 
 ## **Step 2 Setup your project**
 
@@ -29,7 +30,7 @@ Next you have to specify the following parameters:
 
 - Project Metadata: Replace according your needs
 
-![](images/image1.jpg)
+![](/images/image1.jpg)
 
 Package: use jar if you web server would be inside the jar package, use war if you have the web server outside the package.
 
@@ -39,7 +40,7 @@ Dependencies: Select Spring web dependency
 
 It should look like the image below
 
-![](images/image2.jpg)
+![](/images/image2.jpg)
 
 ## **Step 3 Create a end point**
 
@@ -72,8 +73,8 @@ Then run the application using
 ./mvnw spring-boot:run
 ```
 
-![](images/image3.jpg)
+![](/images/image3.jpg)
 
 Finally, open a web browser and you will see this:
 
-![](images/image4.jpg)
+![](/images/image4.jpg)

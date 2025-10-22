@@ -8,15 +8,16 @@ tags:
   - "design-patterns"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/image-50-1024x1024.png"
 ---
 
-![](images/image-50-1024x1024.png)
+![](/images/image-50-1024x1024.png)
 
 So you thought design patterns couldn't be used with composables, huh? Composables are functions. They are not classes or interfaces, so how can we achieve polymorphism?
 
 The principle behind a lot of design patterns is to have a common interface or class that hides implementation. For example, in the image below, Strategy pattern has a common interface and three strategies.
 
-![](images/image-51-1024x567.png)
+![](/images/image-51-1024x567.png)
 
 The code that use the strategies never depends of the implementation of each strategy, instead depends of the Strategy Base. This base is a Class or Interface in a POO context, but **instead we can use a Composable as a common base.**
 
@@ -115,4 +116,4 @@ fun StrategyClient() {
 
 This is the example running
 
-![](images/Peek-2023-12-20-17-37-5.gif)
+![](/images/Peek-2023-12-20-17-37-5.gif)

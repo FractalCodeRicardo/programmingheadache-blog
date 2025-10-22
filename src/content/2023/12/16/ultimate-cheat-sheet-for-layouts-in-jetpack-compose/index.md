@@ -4,6 +4,7 @@ date: 2023-12-16
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/ultimate-image-15.png"
 ---
 
 The basics for controlling how elements are showing in Compose consists in the use of _**Row**_ and _**Column**_. Here is the main idea of both:
@@ -34,7 +35,7 @@ fun Element(text: String) {
 
 **One row x Nth elements**
 
-![](images/image-15.png)
+![](/images/ultimate-image-15.png)
 
 ```kotlin
 Row() {
@@ -48,7 +49,7 @@ Row() {
 
 **One column x Nth elements**
 
-![](images/image-16.png)
+![](/images/ultimate-image-16.png)
 
 ```kotlin
 Column() {
@@ -62,7 +63,7 @@ Column() {
 
 **Nth Elements x Nth Elements**
 
-![](images/image-17.png)
+![](/images/ultimate-image-17.png)
 
 ```kotlin
 Column() {
@@ -88,15 +89,15 @@ Column() {
 
 **Nth Elements **in a Column** Centered**
 
-![](images/X1vO8VcB7DQAAAABJRU5ErkJggg==)
+![](/images/X1vO8VcB7DQAAAABJRU5ErkJggg==)
 
 Vertically
 
-![](images/image-18.png)
+![](/images/ultimate-image-18.png)
 
 Horizontally
 
-![](images/image-19.png)
+![](/images/ultimate-image-19.png)
 
 Full centered
 
@@ -115,15 +116,15 @@ Column(
 
 **Nth Elements **in a Row** Centered**
 
-![](images/image-20.png)
+![](/images/ultimate-image-20.png)
 
 Vertically
 
-![](images/image-23.png)
+![](/images/ultimate-image-23.png)
 
 Horizontally
 
-![](images/image-22.png)
+![](/images/ultimate-image-22.png)
 
 Full centered
 
@@ -142,15 +143,15 @@ Row(
 
 **Other alignments in a Column** **(or Row)**
 
-![](images/image-30.png)
+![](/images/ultimate-image-30.png)
 
 Start
 
-![](images/image-31.png)
+![](/images/ultimate-image-31.png)
 
 Center
 
-![](images/image-32.png)
+![](/images/ultimate-image-32.png)
 
 End
 
@@ -169,15 +170,15 @@ Column(
 
 **Other arragements in a Row (or Column)**
 
-![](images/image-28.png)
+![](/images/ultimate-image-28.png)
 
 Space between
 
-![](images/image-27.png)
+![](/images/ultimate-image-27.png)
 
 Space around (space after and before are the same)
 
-![](images/image-29.png)
+![](/images/ultimate-image-29.png)
 
 Space evenly (all spaces are the same)
 
@@ -196,7 +197,7 @@ Row(
 
 **Nested rows in columns**
 
-![](images/image-33.png)
+![](/images/ultimate-image-33.png)
 
 ```kotlin
 Column() {
@@ -226,7 +227,7 @@ Column() {
 
 **Nested columns in rows**
 
-![](images/image-35.png)
+![](/images/ultimate-image-35.png)
 
 ```kotlin
 Row() {
@@ -273,7 +274,7 @@ Lets see some examples
 
 **Rows width**
 
-![](images/image-36.png)
+![](/images/ultimate-image-36.png)
 
 ```kotlin
 Column() {
@@ -294,7 +295,7 @@ Column() {
 
 **Columns Height**
 
-![](images/image-37.png)
+![](/images/ultimate-image-37.png)
 
 ```kotlin
 Row() {

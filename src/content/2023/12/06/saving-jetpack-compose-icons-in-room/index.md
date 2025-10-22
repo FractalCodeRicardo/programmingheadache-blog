@@ -166,7 +166,7 @@ savedColors.forEach {
 
 This is how the example looks like
 
-![](images/Peek-2023-12-06-09-21.gif)
+![](/images/Peek-2023-12-06-09-21.gif)
 
 You can see the whole code here:
 

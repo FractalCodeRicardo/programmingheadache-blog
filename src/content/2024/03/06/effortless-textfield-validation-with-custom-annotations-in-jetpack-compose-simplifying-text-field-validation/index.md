@@ -7,9 +7,10 @@ tags:
   - "generic-validations"
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2024-03-05-18-03.gif"
 ---
 
-![](images/Peek-2024-03-05-18-03.gif)
+![](/images/Peek-2024-03-05-18-03.gif)
 
 When building Jetpack Compose applications, one of the most tedious and boring tasks is to validate forms. We want to create code that we want reuse to achieve this task faster. It would be great if we can add some custom validation annotations in our state class to validate its properties.
 
@@ -19,7 +20,7 @@ https://www.youtube.com/watch?v=KrqE1H8l3jc
 
 Suppose we have a user screen like this
 
-![](images/image-5.png)
+![](/images/effortless-text-image-5.png)
 
 We would like to have some annotations in our state that perform the validation. Something like this
 
@@ -241,7 +242,7 @@ fun UserScreen(viewModel: UserViewModel) {
 
 The final result looks like this
 
-![](images/Peek-2024-03-05-18-03.gif)
+![](/images/Peek-2024-03-05-18-03.gif)
 
 **Now you can validate a lot of forms with just few lines of code!**
 

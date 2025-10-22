@@ -4,9 +4,10 @@ date: 2023-12-21
 categories: 
   - "jetpack-compose"
   - "kotlin"
+image: "/images/Peek-2023-12-20-17-37-4.gif"
 ---
 
-![](images/Peek-2023-12-20-17-37-4.gif)
+![](/images/Peek-2023-12-20-17-37-4.gif)
 
 In certain scenarios, users need to search and select a record from a table. Implementing a dialog that displays records for user selection would be great. The goal is to create a versatile dialog that is not tied to a specific record type, enabling easy reuse across different contexts.
 
@@ -121,7 +122,7 @@ inline fun <reified T : Any> Headers() {
 }
 ```
 
-![](images/image-43.png)
+![](/images/image-43.png)
 
 ## Creating Rows
 
@@ -177,7 +178,7 @@ inline fun <reified T : Any> RowCells(items: List<T>) {
 }
 ```
 
-![](images/image-44.png)
+![](/images/image-44.png)
 
 ## Adding searchable functionality
 
@@ -204,7 +205,7 @@ inline fun <reified T : Any> SearchableTable(items: List<T>) {
 }
 ```
 
-![](images/Peek-2023-12-20-17-37.gif)
+![](/images/Peek-2023-12-20-17-37.gif)
 
 To filter the records we are going to use next two functions. If any of the record values match the search text, then we keep the record.
 
@@ -254,7 +255,7 @@ inline fun <reified T : Any> SearchableTable(items: List<T>) {
 }
 ```
 
-![](images/Peek-2023-12-20-17-37-1.gif)
+![](/images/Peek-2023-12-20-17-37-1.gif)
 
 ## Creating the dialog
 
@@ -308,7 +309,7 @@ inline fun <reified T : Any> SearchableTableDialog(
 }
 ```
 
-![](images/Peek-2023-12-20-17-37-2.gif)
+![](/images/Peek-2023-12-20-17-37-2.gif)
 
 Finally we add the events for selecting the record. This is the final code
 
@@ -641,4 +642,4 @@ fun SearchableTableDialogPreview() {
 }
 ```
 
-![](images/Peek-2023-12-20-17-37-3.gif)
+![](/images/Peek-2023-12-20-17-37-3.gif)
