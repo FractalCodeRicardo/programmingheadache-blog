@@ -1,5 +1,6 @@
 ---
 interface Post {
+  id: string;
   title: string;
   date: Date;
   image?: string;
@@ -60,9 +61,18 @@ const { post } = Astro.props;
 
 <section>
   <article class="card">
-    {post.image && <img src={post.image} alt={post.title} />}
+    {
+      (
+        <a href={post.id}>
+          <img src={post.image} alt={post.title} />
+        </a>
+      )
+    }
     <div class="content">
-      <h3 class="title">{post.title}</h3>
+
+        <a href={post.id}>
+          <h3 class="title">{post.title}</h3>
+        </a>
       <p class="date">
         {
           post.date

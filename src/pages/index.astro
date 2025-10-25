@@ -21,7 +21,8 @@ async function getPosts() {
   );
 
   var posts = collection.map((i) => {
-    return {
+  return {
+      id: i.id,
       title: i.data.title,
       date: i.data.date,
       image: getImagePath(i),
