@@ -1,0 +1,332 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title="CFDI Suite" description="Visor y herramientas CFDI 4.0 del SAT. Visualiza, verifica y analiza tus comprobantes digitales." />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="product-page">
+        <header class="header">
+          <img src="/images/cfdisuite-logo.png" alt="CFDI Suite" class="logo" />
+          <h1>CFDI Suite</h1>
+          <p class="subtitle">Visor y herramientas CFDI 4.0 del SAT</p>
+          <div class="previews-grid">
+            <img src="/images/cfdisuite-prev1.png" alt="Vista previa 1" />
+            <img src="/images/cfdisuite-prev2.png" alt="Vista previa 2" />
+            <img src="/images/cfdisuite-prev3.png" alt="Vista previa 3" />
+            <img src="/images/cfdisuite-prev4.png" alt="Vista previa 4" />
+          </div>
+        </header>
+
+        <section class="about">
+          <h2>Acerca de la aplicación</h2>
+          <p>Aplicación profesional para visualizar, verificar y analizar CFDI 4.0 del SAT en formato XML, sin necesidad de conexión a internet.</p>
+          <p>Abre tus facturas XML directamente desde tu dispositivo, consulta catálogos oficiales del SAT, suma comprobantes y verifica su estado mediante código QR.</p>
+          <p>Ideal para contadores, contribuyentes y profesionales que gestionan comprobantes digitales en México.</p>
+        </section>
+
+        <section class="features">
+          <h2>Herramientas</h2>
+          <div class="features-grid">
+            <div class="card">
+              <strong>Visor de CFDI 4.0</strong>
+              Visualiza el contenido de tus comprobantes digitales en formato XML.
+            </div>
+            <div class="card">
+              <strong>Catálogos SAT</strong>
+              Consulta las claves oficiales del SAT para diferentes catálogos.
+            </div>
+            <div class="card">
+              <strong>Sumadora de CFDI's</strong>
+              Selecciona y analiza conjuntos de comprobantes con cálculos detallados.
+            </div>
+            <div class="card">
+              <strong>Verificador por QR</strong>
+              Verifica el estado de tus comprobantes leyendo el código QR.
+            </div>
+            <div class="card">
+              <strong>Exportación a Excel</strong>
+              Exporta tus archivos XML a CSV compatible con Excel.
+            </div>
+          </div>
+        </section>
+
+        <section class="tool-detail">
+          <h2>Visor de CFDI 4.0</h2>
+          <p>Esta herramienta te ofrece una solución sin complicaciones para visualizar fácilmente el contenido de tus comprobantes digitales del SAT en formato xml.</p>
+          <p>Explora de manera sencilla:</p>
+          <ul>
+            <li>Comprobantes de ingresos</li>
+            <li>Comprobantes de egresos</li>
+            <li>Comprobantes de traslados</li>
+            <li>Recepción de pagos</li>
+            <li>Recibos de nómina</li>
+            <li>Comprobantes de retenciones</li>
+            <li>Facturas</li>
+          </ul>
+          <p>Accede a la información detallada de tu CFDI 4.0, examinando tanto la información general como cada uno de sus conceptos. Observa con claridad los importes de tus facturas y los detalles relacionados con los impuestos asociados.</p>
+        </section>
+
+        <section class="tool-detail">
+          <h2>Catálogos SAT</h2>
+          <p>Encuentra las claves del SAT para los siguientes catálogos:</p>
+          <ul>
+            <li>Catálogo de Aduanas</li>
+            <li>Catálogo de Estados</li>
+            <li>Catálogo de Exportación</li>
+            <li>Catálogo de Formas de pago</li>
+            <li>Catálogo de Impuestos</li>
+            <li>Catálogo de Meses</li>
+            <li>Catálogo de Método de pago</li>
+            <li>Catálogo de Monedas</li>
+            <li>Catálogo de Objeto de impuestos</li>
+            <li>Catálogo de Países</li>
+            <li>Catálogo de Periodicidades</li>
+            <li>Catálogo de Productos y servicios</li>
+            <li>Catálogo de Regímenes fiscales</li>
+          </ul>
+        </section>
+
+        <section class="tool-detail">
+          <h2>Sumadora CFDI</h2>
+          <p>Esta es una herramienta para la selección y análisis de conjuntos de comprobantes digitales (CFDI 4.0) en formato XML. Una vez que hayas seleccionado los comprobantes, puedes realizar cálculos detallados, agrupándolos por fecha, uso de CFDI, tipo de comprobante y método de pago.</p>
+          
+          <h3>Uso de CFDI</h3>
+          <p>Obtén una visión detallada de tus gastos al conocer el importe total, descuentos y subtotal de los CFDI's, identificando cada uno con su clave SAT correspondiente:</p>
+          <ul>
+            <li>G03: Gastos en general</li>
+            <li>G01: Adquisición de mercancías</li>
+            <li>D01: Honorarios médicos, dentales y gastos hospitalarios</li>
+            <li>D07: Pagos por servicios educativos (colegiaturas)</li>
+            <li>G02: Devoluciones, descuentos o bonificaciones</li>
+          </ul>
+
+          <h3>Tipo de comprobante</h3>
+          <p>Explora los totales de tus comprobantes según su tipo:</p>
+          <ul>
+            <li>I - Ingresos</li>
+            <li>E - Egresos</li>
+            <li>N - Nómina</li>
+            <li>T - Traslados</li>
+            <li>P - Pagos</li>
+          </ul>
+
+          <h3>Método de pago</h3>
+          <p>Descubre cuánto has pagado en parcialidades y de contado, obteniendo un panorama completo de tus transacciones financieras.</p>
+        </section>
+
+        <section class="tool-detail">
+          <h2>Verificador de CFDI</h2>
+          <p>Verifica si tu comprobante digital existe y el estado del mismo. Solo lee el QR de tu factura, recibo de nómina, comprobante, etc y obtén la siguiente información:</p>
+          <ul>
+            <li>Si tu comprobante es válido y está timbrado correctamente</li>
+            <li>Si tu comprobante puede ser cancelado</li>
+            <li>Si tu comprobante ya ha sido cancelado</li>
+            <li>Los datos principales de tu comprobante: RFC del emisor, RFC del receptor y el UUID</li>
+          </ul>
+        </section>
+
+        <section class="tool-detail">
+          <h2>Exportación a Excel</h2>
+          <p>Elige uno o varios de tus archivos XML para luego exportarlos a un archivo (CSV) compatible con Excel. Una vez creado el archivo puedes compartirlo en donde quieras, whatsapp, correo, importarlo en Excel, etc.</p>
+        </section>
+
+        <section class="disclaimer">
+          <h2>Aviso de no afiliación</h2>
+          <p>Esta aplicación no está afiliada ni representa a ninguna entidad gubernamental. Solo procesa archivos XML de facturas (CFDI) proporcionados por el usuario. El estándar CFDI es definido por la autoridad fiscal mexicana, el Servicio de Administración Tributaria:</p>
+          <a href="https://www.sat.gob.mx" target="_blank" rel="noopener noreferrer" class="sat-link">sat.gob.mx</a>
+        </section>
+
+        <footer class="footer">
+          <a href="https://play.google.com/store/apps/details?id=com.thisisthetime.visorcfdi" target="_blank" rel="noopener" class="play-button">
+            Descargar en Google Play
+          </a>
+          <a href="/cfdisuite/privacy" class="privacy-link">Ver Política de Privacidad</a>
+        </footer>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    padding: 2rem 1rem;
+  }
+
+  .product-page {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .header h1 {
+    margin: 0 0 0.5rem;
+    color: #2f80ed;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  h2 {
+    color: #2f80ed;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    color: #2f80ed;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  p {
+    line-height: 1.7;
+    color: #333;
+  }
+
+  ul {
+    line-height: 1.8;
+    color: #333;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .card {
+    background: #f9fbff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border-left: 4px solid #2f80ed;
+  }
+
+  .card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2f80ed;
+  }
+
+  .previews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .previews-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 600px) {
+    .previews-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 200px;
+    }
+  }
+
+  .tool-detail {
+    background: #f9fbff;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .tool-detail h2 {
+    text-align: left;
+  }
+
+  .disclaimer {
+    background: #fffbe6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #f5a623;
+  }
+
+  .disclaimer h2 {
+    text-align: left;
+    color: #f5a623;
+  }
+
+  .sat-link {
+    color: #2f80ed;
+    text-decoration: none;
+  }
+
+  .sat-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .play-button {
+    text-decoration: none;
+    color: white;
+    background: #2f80ed;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .play-button:hover {
+    background: #1f6fe0;
+  }
+
+  .privacy-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .privacy-link:hover {
+    text-decoration: underline;
+  }
+</style>
